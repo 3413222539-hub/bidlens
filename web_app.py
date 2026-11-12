@@ -67,7 +67,7 @@ async def lifespan(app):
     yield
 
 
-app = FastAPI(title="招标条款复核工作台", lifespan=lifespan)
+app = FastAPI(title="标书智查", lifespan=lifespan)
 app.mount("/assets", StaticFiles(directory=WEB), name="assets")
 RISK_LOCK = Lock()
 RISK_RUNNING = set()
