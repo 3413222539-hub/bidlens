@@ -1,0 +1,1046 @@
+{
+  "workers": 1,
+  "planned": 4,
+  "completed": 4,
+  "summary": {
+    "outcomes": {
+      "pass": 4
+    },
+    "checks": {
+      "status": {
+        "passed": 4,
+        "checked": 4
+      },
+      "package_scope": {
+        "passed": 4,
+        "checked": 4
+      },
+      "scoring_items_and_values": {
+        "passed": 4,
+        "checked": 4
+      },
+      "scoring_citation_pages": {
+        "passed": 4,
+        "checked": 4
+      }
+    },
+    "latency": {
+      "rules": {
+        "n": 4,
+        "p50_seconds": 0.057,
+        "p95_seconds": 16.779
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "technical-all-packages",
+      "kind": "标包评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 16.779,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0445-R13",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R14",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R15",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R16",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R17",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R18",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R19",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R11",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R12",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R13",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R14",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R15",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R16",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R17",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R18",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R19",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R20",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R21",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R13",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R14",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R15",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R16",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R17",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "P47-score-3-team-size",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "P48-score-3-team-cert",
+          "page": 48,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R19",
+          "page": 48,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R2",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R3",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R4",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R5",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R6",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R7",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R8",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R9",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R10",
+          "page": 50,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 1,
+          "max_score": 68.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0445-R13",
+                  "page": 42
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "“文旅北京”政务新媒体运营方案",
+              "parts": [
+                40
+              ],
+              "sources": [
+                {
+                  "id": "E0445-R14",
+                  "page": 42
+                }
+              ],
+              "max_score": 40
+            },
+            {
+              "name": "宣传推广方案",
+              "parts": [
+                4
+              ],
+              "sources": [
+                {
+                  "id": "E0445-R15",
+                  "page": 42
+                }
+              ],
+              "max_score": 4
+            },
+            {
+              "name": "非功能性需求方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0445-R16",
+                  "page": 43
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                4,
+                2,
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0445-R17",
+                  "page": 43
+                },
+                {
+                  "id": "E0445-R18",
+                  "page": 43
+                },
+                {
+                  "id": "E0445-R19",
+                  "page": 43
+                }
+              ],
+              "max_score": 12
+            }
+          ],
+          "score_kind": "technical"
+        },
+        {
+          "package": 2,
+          "max_score": 82.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                12
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R11",
+                  "page": 44
+                }
+              ],
+              "max_score": 12
+            },
+            {
+              "name": "质量控制方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R12",
+                  "page": 44
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "进度控制方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R13",
+                  "page": 44
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "投资控制方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R14",
+                  "page": 44
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "变更控制方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R15",
+                  "page": 44
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "合同管理方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R16",
+                  "page": 45
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "信息管理方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R17",
+                  "page": 45
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "组织协调方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R18",
+                  "page": 45
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                9,
+                5,
+                10
+              ],
+              "sources": [
+                {
+                  "id": "E0446-R19",
+                  "page": 45
+                },
+                {
+                  "id": "E0446-R20",
+                  "page": 45
+                },
+                {
+                  "id": "E0446-R21",
+                  "page": 45
+                }
+              ],
+              "max_score": 24
+            }
+          ],
+          "score_kind": "technical"
+        },
+        {
+          "package": 3,
+          "max_score": 65.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R13",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "运维服务方案",
+              "parts": [
+                35
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R14",
+                  "page": 47
+                }
+              ],
+              "max_score": 35
+            },
+            {
+              "name": "进度保障组织方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R15",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "保密措施解决方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R16",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "质量保障解决方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R17",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                1,
+                6,
+                3
+              ],
+              "sources": [
+                {
+                  "id": "P47-score-3-team-size",
+                  "page": 47
+                },
+                {
+                  "id": "P48-score-3-team-cert",
+                  "page": 48
+                },
+                {
+                  "id": "E0447-R19",
+                  "page": 48
+                }
+              ],
+              "max_score": 10
+            }
+          ],
+          "score_kind": "technical"
+        },
+        {
+          "package": 4,
+          "max_score": 78.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                12
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R2",
+                  "page": 49
+                }
+              ],
+              "max_score": 12
+            },
+            {
+              "name": "网站监测系统功能",
+              "parts": [
+                18
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R3",
+                  "page": 49
+                }
+              ],
+              "max_score": 18
+            },
+            {
+              "name": "新媒体监测系统功能",
+              "parts": [
+                12
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R4",
+                  "page": 49
+                }
+              ],
+              "max_score": 12
+            },
+            {
+              "name": "进度保障组织方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R5",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "保密措施解决方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R6",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "质量保障解决方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R7",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                3,
+                3,
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R8",
+                  "page": 50
+                },
+                {
+                  "id": "E0449-R9",
+                  "page": 50
+                },
+                {
+                  "id": "E0449-R10",
+                  "page": 50
+                }
+              ],
+              "max_score": 12
+            }
+          ],
+          "score_kind": "technical"
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "technical-package-three",
+      "kind": "标包评分",
+      "question": "第3包有哪些评分项？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.058,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0447-R13",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R14",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R15",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R16",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R17",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "P47-score-3-team-size",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "P48-score-3-team-cert",
+          "page": 48,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R19",
+          "page": 48,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 3,
+          "max_score": 65.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R13",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "运维服务方案",
+              "parts": [
+                35
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R14",
+                  "page": 47
+                }
+              ],
+              "max_score": 35
+            },
+            {
+              "name": "进度保障组织方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R15",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "保密措施解决方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R16",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "质量保障解决方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0447-R17",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                1,
+                6,
+                3
+              ],
+              "sources": [
+                {
+                  "id": "P47-score-3-team-size",
+                  "page": 47
+                },
+                {
+                  "id": "P48-score-3-team-cert",
+                  "page": 48
+                },
+                {
+                  "id": "E0447-R19",
+                  "page": 48
+                }
+              ],
+              "max_score": 10
+            }
+          ],
+          "score_kind": "technical"
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "technical-package-followup",
+      "kind": "标包评分",
+      "question": "那第4包呢？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": "第3包有哪些评分项？",
+      "seconds": 0.054,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0449-R2",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R3",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R4",
+          "page": 49,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R5",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R6",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R7",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R8",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R9",
+          "page": 50,
+          "page_verified": true
+        },
+        {
+          "id": "E0449-R10",
+          "page": 50,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 4,
+          "max_score": 78.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "需求分析",
+              "parts": [
+                12
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R2",
+                  "page": 49
+                }
+              ],
+              "max_score": 12
+            },
+            {
+              "name": "网站监测系统功能",
+              "parts": [
+                18
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R3",
+                  "page": 49
+                }
+              ],
+              "max_score": 18
+            },
+            {
+              "name": "新媒体监测系统功能",
+              "parts": [
+                12
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R4",
+                  "page": 49
+                }
+              ],
+              "max_score": 12
+            },
+            {
+              "name": "进度保障组织方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R5",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "保密措施解决方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R6",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "质量保障解决方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R7",
+                  "page": 50
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "项目团队",
+              "parts": [
+                3,
+                3,
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0449-R8",
+                  "page": 50
+                },
+                {
+                  "id": "E0449-R9",
+                  "page": 50
+                },
+                {
+                  "id": "E0449-R10",
+                  "page": 50
+                }
+              ],
+              "max_score": 12
+            }
+          ],
+          "score_kind": "technical"
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "technical-unknown-package",
+      "kind": "标包评分",
+      "question": "第9包有哪些评分项？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.055,
+      "route": "rules",
+      "status": "needs_review",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 9,
+          "max_score": null,
+          "complete": false,
+          "items": []
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    }
+  ]
+}

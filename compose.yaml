@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    image: tender-review:latest
+    container_name: tender-review
+    ports:
+      - "8780:8780"
+    env_file:
+      - .env
+    environment:
+      # 需要登录时取消注释
+      # TENDER_TEAM: "1"
+      TZ: Asia/Shanghai
+    volumes:
+      # 招标文件与解析结果
+      - ./data:/app/data
+      # 公司档案
+      - ./profiles:/app/profiles
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8780/api/session', timeout=4).status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s

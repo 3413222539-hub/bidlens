@@ -1,0 +1,91 @@
+{
+  "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+  "model": "live",
+  "cold": {
+    "requests": [
+      {
+        "seconds": 20.446,
+        "status": "answered",
+        "timing_ms": {
+          "index": 7652,
+          "prepare": 7500,
+          "agent": 5294
+        },
+        "pages": [
+          41,
+          42
+        ]
+      }
+    ],
+    "counts": {
+      "index_builds": 1,
+      "pdf_reads": 2,
+      "fact_builds": 1
+    }
+  },
+  "followup": {
+    "requests": [
+      {
+        "seconds": 4.352,
+        "status": "answered",
+        "timing_ms": {
+          "index": 0,
+          "prepare": 1,
+          "agent": 4350
+        },
+        "pages": [
+          42
+        ]
+      }
+    ],
+    "counts": {}
+  },
+  "concurrent": {
+    "requests": [
+      {
+        "seconds": 58.466,
+        "status": "answered",
+        "timing_ms": {
+          "index": 23502,
+          "prepare": 29160,
+          "agent": 5788
+        },
+        "pages": [
+          41,
+          42
+        ]
+      },
+      {
+        "seconds": 56.397,
+        "status": "answered",
+        "timing_ms": {
+          "index": 22081,
+          "prepare": 28737,
+          "agent": 5578
+        },
+        "pages": [
+          42
+        ]
+      },
+      {
+        "seconds": 55.837,
+        "status": "answered",
+        "timing_ms": {
+          "index": 23025,
+          "prepare": 28345,
+          "agent": 4448
+        },
+        "pages": [
+          41,
+          42
+        ]
+      }
+    ],
+    "counts": {
+      "index_builds": 3,
+      "pdf_reads": 6,
+      "fact_builds": 3
+    },
+    "wall_seconds": 58.469
+  }
+}

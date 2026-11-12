@@ -1,0 +1,112 @@
+{
+  "legacy_prefixes": [
+    "1a2c94fe",
+    "a465a17b",
+    "072efbb6",
+    "47e3a561",
+    "97ebd11e"
+  ],
+  "reference_overrides": {
+    "a465a17b-资格": {
+      "pages": [
+        7,
+        24
+      ]
+    },
+    "47e3a561-时间": {
+      "pages": [
+        7,
+        13
+      ]
+    }
+  },
+  "comparison_names": [
+    "安宁庄西路",
+    "新乡医学院",
+    "新乡医学院不存在的标包",
+    "首都机场二标段缺中间版本"
+  ],
+  "cases": [
+    {
+      "id": "team-score",
+      "prefix": "ec53a8e2",
+      "kind": "评分",
+      "question": "项目团队方案评价最高得几分？",
+      "status": "answered",
+      "patterns": [
+        "3分|三分"
+      ],
+      "pages": [
+        46
+      ]
+    },
+    {
+      "id": "team-score-followup",
+      "prefix": "ec53a8e2",
+      "kind": "追问",
+      "question": "评分等级怎么划分？",
+      "previous_question": "项目团队方案评价最高得几分？",
+      "status": "answered",
+      "patterns": [
+        "项目团队方案评价",
+        "3分",
+        "2分",
+        "1分",
+        "0分",
+        "不少于5人|至少5人|5人及以上"
+      ],
+      "pages": [
+        46
+      ]
+    },
+    {
+      "id": "performance-deposit",
+      "prefix": "f64c8c17",
+      "kind": "金额",
+      "question": "履约保证金是多少？请指出原文。",
+      "status": "answered",
+      "patterns": [
+        "2万元|20000元|两万元"
+      ],
+      "pages": [
+        16
+      ]
+    },
+    {
+      "id": "bid-deposit-waiver",
+      "prefix": "f64c8c17",
+      "kind": "金额",
+      "question": "本项目是否收取投标保证金？",
+      "status": "answered",
+      "patterns": [
+        "免收|不收取|无需|不需要"
+      ],
+      "pages": [
+        10
+      ]
+    },
+    {
+      "id": "unsubstantiated-helicopter",
+      "prefix": "ec53a8e2",
+      "kind": "证据不足",
+      "question": "文件中是否明确要求投标人必须自有三架直升机？",
+      "status": "needs_review"
+    },
+    {
+      "id": "partial-coverage",
+      "prefix": "8c7fa397",
+      "kind": "缺页",
+      "question": "本项目要求投标人持有什么许可证？请引用原文。",
+      "status": "answered",
+      "patterns": [
+        "食品经营许可证"
+      ],
+      "pages": [
+        5
+      ],
+      "uncovered_pages": [
+        3
+      ]
+    }
+  ]
+}

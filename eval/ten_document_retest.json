@@ -1,0 +1,488 @@
+[
+  {
+    "sample": "02",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          13
+        ],
+        "yuan": 30000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "投标保证金 30,000.00元。",
+        "actual_pages": [
+          13
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          4
+        ],
+        "yuan": 2010000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 201.00万元。",
+        "actual_pages": [
+          4
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 35,
+        "terms": [
+          "不确认",
+          "投标无效"
+        ],
+        "candidate_pages": [
+          35
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "06",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          11,
+          16
+        ],
+        "yuan": 100000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "投标保证金 10万元。",
+        "actual_pages": [
+          11,
+          16
+        ]
+      }
+    ],
+    "candidates": [],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "08",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          2
+        ],
+        "yuan": null,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "文件明确免收投标保证金。",
+        "actual_pages": [
+          2
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          2
+        ],
+        "yuan": 5217600,
+        "package": 1,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 5217600元。",
+        "actual_pages": [
+          2,
+          2
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 10,
+        "terms": [
+          "未按照招标文件规定提交投标保证金"
+        ],
+        "candidate_pages": [
+          10
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": [
+      1
+    ]
+  },
+  {
+    "sample": "10",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "pending",
+        "pages": [
+          10
+        ],
+        "yuan": null,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "请核对本标包是否要求提交投标保证金、金额及提交方式。",
+        "actual_pages": [
+          10
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          4,
+          40
+        ],
+        "yuan": 1804506.75,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 180.450675万元。",
+        "actual_pages": [
+          4
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 15,
+        "terms": [
+          "节能产品认证证书",
+          "投标无效"
+        ],
+        "candidate_pages": [
+          15
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "11",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          7
+        ],
+        "yuan": null,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "文件明确免收投标保证金。",
+        "actual_pages": [
+          7
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3
+        ],
+        "yuan": 1963000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 196.3万元。",
+        "actual_pages": [
+          3
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 12,
+        "terms": [
+          "节能产品认证证书",
+          "投标无效"
+        ],
+        "candidate_pages": [
+          12
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "22",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          10
+        ],
+        "yuan": null,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "文件明确免收投标保证金。",
+        "actual_pages": [
+          10
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 3,
+        "terms": [
+          "未按照招标文件的规定提交投标保证金",
+          "无效投标"
+        ],
+        "candidate_pages": [
+          3
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "27",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          10
+        ],
+        "yuan": 20000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "投标保证金 20000元。",
+        "actual_pages": [
+          10
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 1720000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 1720000元。",
+        "actual_pages": [
+          3,
+          7
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 11,
+        "terms": [
+          "名称必须一致",
+          "投标无效"
+        ],
+        "candidate_pages": [
+          10,
+          11
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "23",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          11
+        ],
+        "yuan": 6000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "投标保证金 6000元。",
+        "actual_pages": [
+          11
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          8
+        ],
+        "yuan": 300200,
+        "package": 1,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 300200.00元。",
+        "actual_pages": [
+          8
+        ]
+      }
+    ],
+    "candidates": [
+      {
+        "page": 12,
+        "terms": [
+          "名称必须一致",
+          "投标无效"
+        ],
+        "candidate_pages": [
+          11,
+          12
+        ],
+        "model_source_pages": null
+      }
+    ],
+    "model": null,
+    "packages": [
+      1
+    ]
+  },
+  {
+    "sample": "25",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          9
+        ],
+        "yuan": 8000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "投标保证金 8000元。",
+        "actual_pages": [
+          9
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          6
+        ],
+        "yuan": 498000,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 498000.00元。",
+        "actual_pages": [
+          3,
+          6
+        ]
+      }
+    ],
+    "candidates": [],
+    "model": null,
+    "packages": []
+  },
+  {
+    "sample": "28",
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          11
+        ],
+        "yuan": null,
+        "package": null,
+        "correct": true,
+        "page_hit": true,
+        "actual": "文件明确免收投标保证金。",
+        "actual_pages": [
+          11
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 5600000,
+        "package": 1,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 5600000元。",
+        "actual_pages": [
+          3,
+          7
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 4600000,
+        "package": 2,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 4600000元。",
+        "actual_pages": [
+          7
+        ]
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 3560000,
+        "package": 3,
+        "correct": true,
+        "page_hit": true,
+        "actual": "最高限价 3560000元。",
+        "actual_pages": [
+          7
+        ]
+      }
+    ],
+    "candidates": [],
+    "model": null,
+    "packages": [
+      1,
+      2,
+      3
+    ]
+  }
+]

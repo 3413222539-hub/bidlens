@@ -1,0 +1,227 @@
+{
+  "workers": 1,
+  "planned": 2,
+  "completed": 2,
+  "summary": {
+    "outcomes": {
+      "pass": 2
+    },
+    "checks": {
+      "status": {
+        "passed": 2,
+        "checked": 2
+      },
+      "answer_anchors": {
+        "passed": 2,
+        "checked": 2
+      },
+      "citation_page_hit": {
+        "passed": 2,
+        "checked": 2
+      }
+    },
+    "latency": {
+      "agent": {
+        "n": 2,
+        "p50_seconds": 17.705,
+        "p95_seconds": 18.352
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "1a2c94fe-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 18.352,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0026",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0090",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0091",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0097",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0098",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0162",
+          "page": 19,
+          "page_verified": true
+        },
+        {
+          "id": "E0163",
+          "page": 20,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 8968,
+        "prepare": 156,
+        "agent": 9227
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 7
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1790,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5,
+            6
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1925,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 5504
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 17.058,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "P6",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "E0113-R12",
+          "page": 10,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 7140,
+        "prepare": 69,
+        "agent": 9849
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 4005,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5,
+            6
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 5843
+        }
+      ],
+      "uncovered_pages": []
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+[
+  {
+    "sample": "22",
+    "before": 5,
+    "after": 10,
+    "split_sources": [
+      {
+        "id": "E0009-R19-C1",
+        "page": 3,
+        "page_verified": true
+      },
+      {
+        "id": "E0009-R19-C2",
+        "page": 3,
+        "page_verified": true
+      },
+      {
+        "id": "E0009-R19-C3",
+        "page": 3,
+        "page_verified": true
+      },
+      {
+        "id": "E0009-R19-C4",
+        "page": 3,
+        "page_verified": true
+      },
+      {
+        "id": "E0009-R19-C5",
+        "page": 3,
+        "page_verified": true
+      },
+      {
+        "id": "E0009-R19-C6",
+        "page": 3,
+        "page_verified": true
+      }
+    ],
+    "items": [
+      {
+        "id": "E0009-R19-C1",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0009-R19-C1",
+            "page": 3,
+            "page_verified": true
+          }
+        ],
+        "context": "",
+        "title": "未提交投标保证金",
+        "condition": "投标文件未按照招标文件的规定提交投标保证金",
+        "check": "核对投标保证金提交情况是否符合招标文件规定",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0009-R19-C2",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0009-R19-C2",
+            "page": 3,
+            "page_verified": true
+          }
+        ],
+        "context": "18 | 导致无效标因素 | 投标文件属下列情况之一的,在资格性、符合性检查时按照无效投标处理",
+        "title": "投标文件未签署或盖章",
+        "condition": "投标文件未按招标文件要求签署、盖章",
+        "check": "检查投标文件签署和盖章是否符合招标文件要求",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0009-R19-C3",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0009-R19-C3",
+            "page": 3,
+            "page_verified": true
+          }
+        ],
+        "context": "18 | 导致无效标因素 | 投标文件属下列情况之一的,在资格性、符合性检查时按照无效投标处理",
+        "title": "不具备资格要求",
+        "condition": "投标人不具备招标文件中规定的资格要求",
+        "check": "核对投标人是否满足招标文件规定的资格要求",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0009-R19-C4",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0009-R19-C4",
+            "page": 3,
+            "page_verified": true
+          }
+        ],
+        "context": "18 | 导致无效标因素 | 投标文件属下列情况之一的,在资格性、符合性检查时按照无效投标处理",
+        "title": "报价超过预算或最高限价",
+        "condition": "报价超过招标文件中规定的预算金额或者最高限价",
+        "check": "核对投标报价是否超过预算金额或最高限价",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0009-R19-C5",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0009-R19-C5",
+            "page": 3,
+            "page_verified": true
+          }
+        ],
+        "context": "18 | 导致无效标因素 | 投标文件属下列情况之一的,在资格性、符合性检查时按照无效投标处理",
+        "title": "含采购人不能接受的附加条件",
+        "condition": "投标文件含有采购人不能接受的附加条件",
+        "check": "审查投标文件是否含有采购人不能接受的附加条件",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0146",
+        "number": "12.2.8",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0146",
+            "page": 10,
+            "page_verified": true
+          }
+        ],
+        "title": "资格条件证明缺失或不符合",
+        "condition": "不提供资格条件的证明材料，或经审查不符合投标资格要求",
+        "check": "核对资格条件证明材料是否提供及是否符合投标资格要求",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0229",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0229",
+            "page": 13,
+            "page_verified": true
+          }
+        ],
+        "title": "不确认修正后报价",
+        "condition": "修正后的报价按照本须知24.5条规定经投标人确认后产生约束力，投标人不确认修正后的报价",
+        "check": "核对投标人是否确认修正后的报价",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0230",
+        "number": "24.6",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0230",
+            "page": 13,
+            "page_verified": true
+          }
+        ],
+        "title": "不能证明报价合理性",
+        "condition": "评标委员会认为投标人的报价明显低于其他通过符合性审查投标人的报价，有可能影响产品质量或者不能诚信履约，要求其在评标现场合理的时间内提供书面说明，必要时提交相关证明材料；投标人不能证明其报价合理性",
+        "check": "核对评标委员会是否要求提供书面说明及相关证明材料，以及投标人能否证明其报价合理性",
+        "references": [],
+        "scope": ""
+      },
+      {
+        "id": "E0288",
+        "number": "",
+        "group": "无效投标",
+        "sources": [
+          {
+            "id": "E0288",
+            "page": 16,
+            "page_verified": true
+          }
+        ],
+        "title": "所投标段设备报价不全",
+        "condition": "投标人未对所投标段内的设备全部报价，报价不全",
+        "check": "核对所投标段内设备报价是否完整",
+        "references": [],
+        "scope": ""
+      }
+    ]
+  },
+  {
+    "sample": "02",
+    "before": 6,
+    "after": 6,
+    "split_sources": []
+  },
+  {
+    "sample": "06",
+    "before": 18,
+    "after": 18,
+    "split_sources": []
+  },
+  {
+    "sample": "08",
+    "before": 46,
+    "after": 46,
+    "split_sources": []
+  },
+  {
+    "sample": "10",
+    "before": 29,
+    "after": 29,
+    "split_sources": []
+  },
+  {
+    "sample": "11",
+    "before": 27,
+    "after": 27,
+    "split_sources": []
+  },
+  {
+    "sample": "27",
+    "before": 12,
+    "after": 12,
+    "split_sources": []
+  },
+  {
+    "sample": "23",
+    "before": 16,
+    "after": 16,
+    "split_sources": []
+  },
+  {
+    "sample": "25",
+    "before": 12,
+    "after": 12,
+    "split_sources": []
+  },
+  {
+    "sample": "28",
+    "before": 11,
+    "after": 11,
+    "split_sources": []
+  }
+]

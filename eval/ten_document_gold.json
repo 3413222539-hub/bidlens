@@ -1,0 +1,355 @@
+[
+  {
+    "sample": "02",
+    "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+    "title": "中国人民银行征信中心 2024 年上海数据中心设备 管理平台及配套系统升级二次采购项目 招标文 件 项目编号：2306089066 项目名称：2024 年上海数据中心设备管理平台及配套 系统升级二次采购项目 招 标 人：中国人民银行征信中心 招标代理机构：上海",
+    "url": "https://jzcg.pbc.gov.cn/gpx-bid-file/ZZZZZZ/gpx-template/2025/7/18/2c96d1ad96ce7c6701981b484e1838a6.pdf",
+    "sha256": "e56c0061783ba6a85870e8cbf0c594fa3adc7e64825ce4605ef285ad23ec88ee",
+    "pages": 128,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          13
+        ],
+        "yuan": 30000,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          4
+        ],
+        "yuan": 2010000,
+        "package": null
+      }
+    ],
+    "risks": [
+      {
+        "page": 35,
+        "terms": [
+          "不确认",
+          "投标无效"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "06",
+    "document_id": "ac0763ea73334ad6bac44deaee38680d",
+    "title": "东莞工程招标文件",
+    "url": "https://www.dg.gov.cn/attachment/0/40/40094/3425395.pdf",
+    "sha256": "39577ca5fe218dbda19252c6f274806231c32cebd608491599d36c940343564b",
+    "pages": 152,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          11,
+          16
+        ],
+        "yuan": 100000,
+        "package": null
+      }
+    ],
+    "risks": []
+  },
+  {
+    "sample": "08",
+    "document_id": "1c553979fbf844098cb43901aaac3e9d",
+    "title": "2022/8/24 (ktca) 61.131.58.48/gpmsqx/webPages#bidCompileAction/biddingProjectInfoView 1/45 福建省政府采购 货物和服务项目 公开招标文件 项目名称：泉州市洛江区城市管理局",
+    "url": "https://www.qzlj.gov.cn/zwgk/szjs/202208/P020220824577073524115.pdf",
+    "sha256": "fcf1e8f75cbfe860f1192a581a3329624f3963cd914fb9340e016cdf6f0eea20",
+    "pages": 45,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          2
+        ],
+        "yuan": null,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          2
+        ],
+        "yuan": 5217600,
+        "package": 1
+      }
+    ],
+    "risks": [
+      {
+        "page": 10,
+        "terms": [
+          "未按照招标文件规定提交投标保证金"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "10",
+    "document_id": "8c7fa397c3434c528498b20b36911c44",
+    "title": "北京市政府采购项目 公开招标文件 项目名称：水务综合保障—2026年食堂运转项目 项目编号/包号： 采 购 人：北京市水科学技术研究院 采购代理机构：北京水务咨询有限公司 2026年 4月 7日",
+    "url": "https://swj.beijing.gov.cn/zwgk/zfcg/zbcjgg/202604/P020260429576389913011.pdf",
+    "sha256": "b0093bc85552453a0401a269db0a24a309bb044887418fbccea29d2ee7aea805",
+    "pages": 112,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "pending",
+        "pages": [
+          10
+        ],
+        "yuan": null,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          4,
+          40
+        ],
+        "yuan": 1804506.75,
+        "package": null
+      }
+    ],
+    "risks": [
+      {
+        "page": 15,
+        "terms": [
+          "节能产品认证证书",
+          "投标无效"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "11",
+    "document_id": "5797c20e6f4a430bbe86d34062b25c62",
+    "title": "北京市政府采购项目公开招标文件示范文本 北京市政府采购项目 公开招标文件 项目名称：国有林场森林综合管护项目（森林防火设施设备维 护项目） 项目编号/包号：11000026210200166854-XM001/01 采 购 人：北京市西山试验林场管理处 采购代",
+    "url": "https://yllhj.beijing.gov.cn/zwgk/zfcg/cgjg/202605/P020260514397031592674.pdf",
+    "sha256": "b57f8aa9126fbb6ab26c4c0edace38a5c910ce7401af7dbe9982e49a8b9513d7",
+    "pages": 87,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          7
+        ],
+        "yuan": null,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3
+        ],
+        "yuan": 1963000,
+        "package": null
+      }
+    ],
+    "risks": [
+      {
+        "page": 12,
+        "terms": [
+          "节能产品认证证书",
+          "投标无效"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "22",
+    "document_id": "f64c8c17f304479f878586c1ab26bfdc",
+    "title": "公开招标文件 采购编号：SZWK2024-Z-G-104号 学校编号：20240038号 采 购 人：苏州科技大学 项目名称：2024 年度学校集中采购服务商（办公家 具类） （第二批） 项目类别：服务类 苏州市卫康招投标咨询服务有限公司 二○二四年五月",
+    "url": "https://zbb.usts.edu.cn/uploadDocs/1400148/202405/2b461dd8d5de4b5d934a0ca8a7073122/ccfaces-file/SZWK2024-Z-G-1042024%E5%B9%B4%E5%BA%A6%E9%9B%86%E4%B8%AD%E9%87%87%E8%B4%AD%E4%BE%9B%E5%BA%94%E5%95%86%EF%BC%88%E5%8A%9E%E5%85%AC%E5%AE%B6%E5%85%B7%EF%BC%89%EF%BC%88%E7%AC%AC%E4%BA%8C%E6%89%B9%EF%BC%89.pdf",
+    "sha256": "a004cbd4e6564ebe53d8172d6740e7d58f4d3195ce84937ea8ae2fba741491d1",
+    "pages": 34,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          10
+        ],
+        "yuan": null,
+        "package": null
+      }
+    ],
+    "risks": [
+      {
+        "page": 3,
+        "terms": [
+          "未按照招标文件的规定提交投标保证金",
+          "无效投标"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "27",
+    "document_id": "5aa81f152a5e4c38bb0f702fc6dd714b",
+    "title": "项目编号：KY2023-1-078 陕西省公安厅交通警察总队机动车及驾 驶人管理业务材料 （检验合格标志及驾(行)驶证夹项目） 公开招标文件 陕西开源招标有限公司 2023年 6月",
+    "url": "https://www.ccgp-shaanxi.gov.cn/gpx-bid-file/tenant/610001/2023/6/25/8a69c716884489d50188f0a5c8c7631e/gpx-template/8a69c53c8845e0e30189868f3ecd1dde.pdf",
+    "sha256": "50d519858c816af3531fa35e775caa3db3aa3a5418e285084dc4f9faed202a98",
+    "pages": 61,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          10
+        ],
+        "yuan": 20000,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 1720000,
+        "package": null
+      }
+    ],
+    "risks": [
+      {
+        "page": 11,
+        "terms": [
+          "名称必须一致",
+          "投标无效"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "23",
+    "document_id": "c51bc03542aa4560b64b6d4730eb588c",
+    "title": "项目编号：KY2025-3-240 陕西省乒乓球羽毛球网球运动管理中心 乒乓球队科研设备购置项目 公开招标文件 陕西开源招标有限公司 2025年10 月",
+    "url": "https://www.ccgp-shaanxi.gov.cn/gpx-bid-file/ZF_JGBM_000003/zone/2025/1/12/project/gpx-template/8a69c21f9a63addd019a818d80d2563b.pdf",
+    "sha256": "635b9cb9c0add51b8c41035bc5a9e1d374b6fad2a6c667c3798de4483555c2cb",
+    "pages": 62,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          11
+        ],
+        "yuan": 6000,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          8
+        ],
+        "yuan": 300200,
+        "package": 1
+      }
+    ],
+    "risks": [
+      {
+        "page": 12,
+        "terms": [
+          "名称必须一致",
+          "投标无效"
+        ]
+      }
+    ]
+  },
+  {
+    "sample": "25",
+    "document_id": "6d8e492a4b9849fb945854782dddb4d0",
+    "title": "项目编号：KY2025-1-1029 西安科技大学煤矿具身智能机器人及其 智能知识资源管理系统采购项目 公开招标文件 陕西开源招标有限公司 2025 年10 月",
+    "url": "https://www.ccgp-shaanxi.gov.cn/gpx-bid-file/ZF_JGBM_000003/zone/2025/1/12/project/gpx-template/8a69c82c9a637a1c019a968b3f9154f0.pdf",
+    "sha256": "771168d9e9acf3fc23504065d4c774135340a448dbf9ccbb17d4deaf19bebfb4",
+    "pages": 64,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "applies",
+        "pages": [
+          9
+        ],
+        "yuan": 8000,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          6
+        ],
+        "yuan": 498000,
+        "package": null
+      }
+    ],
+    "risks": []
+  },
+  {
+    "sample": "28",
+    "document_id": "9bcb6456bd534853bb617ae00a72ac05",
+    "title": "项目编号：KY2024-1-292 榆林市中医医院迁建项目 医疗设备购置（全身高端彩超诊断仪、C 型臂、眼科 A/B 超等）货物类项目 公开招标文件 陕西开源招标有限公司 2024 年10 月",
+    "url": "https://www.ccgp-shaanxi.gov.cn/gpx-bid-file/ZF_JGBM_000003/610801/2024/9/18/8a69c85191b241d90191b710710f566f/gpx-template/8a69c828916f28c201927e7e22d74649.pdf",
+    "sha256": "c9c576c5061fcc9649db9b8f2b06f1c3f9888b4d93b554e6da2dfb81474dcc31",
+    "pages": 114,
+    "facts": [
+      {
+        "id": "bid-deposit",
+        "state": "excluded",
+        "pages": [
+          11
+        ],
+        "yuan": null,
+        "package": null
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 5600000,
+        "package": 1
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 4600000,
+        "package": 2
+      },
+      {
+        "id": "price-limit",
+        "state": "applies",
+        "pages": [
+          3,
+          7
+        ],
+        "yuan": 3560000,
+        "package": 3
+      }
+    ],
+    "risks": []
+  }
+]

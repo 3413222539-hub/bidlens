@@ -1,0 +1,27 @@
+{
+  "confirmation_fixture": "in-memory",
+  "cases": [
+    {
+      "name": "安宁庄西路",
+      "package": null,
+      "before": "2026-09-22 14:30",
+      "after": "2026-09-28 14:30",
+      "original_page": 2,
+      "notice_page": 1,
+      "history_preserved": true,
+      "unaffected_confirmation_ids": 0,
+      "print_view": true
+    },
+    {
+      "name": "新乡医学院",
+      "package": 2,
+      "before": "573290元",
+      "after": "178810元",
+      "original_page": 5,
+      "notice_page": 8,
+      "history_preserved": true,
+      "unaffected_confirmation_ids": 2,
+      "print_view": true
+    }
+  ]
+}

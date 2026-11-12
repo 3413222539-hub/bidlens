@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.git/
+.venv/
+venv/
+.pytest_cache/
+data/
+profiles/
+tests/
+eval/
+*.ipynb
+*.md
+!README.md
+.env
+.env.*
+!.env.example
+*.log

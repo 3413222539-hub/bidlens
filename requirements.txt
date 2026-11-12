@@ -1,0 +1,6 @@
+# 运行依赖
+fastapi==0.162.2
+uvicorn==0.54.0
+python-multipart==0.0.33
+pypdf==7.0.0
+Pillow==13.0.0

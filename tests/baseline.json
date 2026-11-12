@@ -1,0 +1,660 @@
+[
+ {
+  "id": "072efbb61d404e27b3ec9ad6e01365fd",
+  "name": "招标文件（定稿挂网）--图书馆2026年中外文纸质图书采购.pdf",
+  "packages": [
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "methods": [],
+  "license_pages": [
+   7
+  ],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "excluded"
+    ]
+   ],
+   "2": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "excluded"
+    ]
+   ],
+   "3": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "excluded"
+    ]
+   ],
+   "4": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "excluded"
+    ]
+   ],
+   "5": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ],
+    [
+     "特定资格许可证",
+     "excluded"
+    ],
+    [
+     "特定资格许可证",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 10,
+    "pending": 0,
+    "excluded": 0
+   },
+   "2": {
+    "applies": 10,
+    "pending": 0,
+    "excluded": 0
+   },
+   "3": {
+    "applies": 10,
+    "pending": 0,
+    "excluded": 0
+   },
+   "4": {
+    "applies": 10,
+    "pending": 0,
+    "excluded": 0
+   },
+   "5": {
+    "applies": 10,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "1a2c94fe34754ed1a31c64134f922cbd",
+  "name": "评测02-中国人民银行征信中心 2024 年上海数据中心设备 管理平台及配套系统升级二次采购项目 招.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 5,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "1c553979fbf844098cb43901aaac3e9d",
+  "name": "webPages.pdf",
+  "packages": [
+   1
+  ],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 42,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "2ed8d4ce8b044cc7b6e53dfda27a7daa",
+  "name": "苏州科技大学实习服务招标.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "pending"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 1,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "33e8e850fd7d42a683cd23a26f26509c",
+  "name": "评测29-公开招标文件.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": []
+  },
+  "applies": {
+   "None": {
+    "applies": 0,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "47e3a561f8634b5781911a5327afaa7d",
+  "name": "8a69c50f97c135510198120e7f4471df.pdf",
+  "packages": [
+   1,
+   2
+  ],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "2": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 14,
+    "pending": 0,
+    "excluded": 0
+   },
+   "2": {
+    "applies": 14,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "5797c20e6f4a430bbe86d34062b25c62",
+  "name": "评测11-北京市政府采购项目公开招标文件示范文本 北京市政府采购项目 公开招标文件 项目名称：国有林.pdf",
+  "packages": [],
+  "methods": [
+   "综合评分法"
+  ],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 25,
+    "pending": 0,
+    "excluded": 1
+   }
+  }
+ },
+ {
+  "id": "5aa81f152a5e4c38bb0f702fc6dd714b",
+  "name": "评测27-项目编号：KY2023-1-078 陕西省公安厅交通警察总队机动车及驾 驶人管理业务材料 .pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 11,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "5e47a083a647493b97b98a911d5c4d22",
+  "name": "杭州职业技术学院空调采购.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": []
+  },
+  "applies": {
+   "None": {
+    "applies": 27,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "62e18ea3d1444b43a7e31bab5778a249",
+  "name": "9348f557ab734fb4a81f9af1cebb623c.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "pending"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 24,
+    "pending": 3,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "6d8e492a4b9849fb945854782dddb4d0",
+  "name": "评测25-项目编号：KY2025-1-1029 西安科技大学煤矿具身智能机器人及其 智能知识资源管理.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 11,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "8c7fa397c3434c528498b20b36911c44",
+  "name": "评测10-北京市政府采购项目 公开招标文件 项目名称：水务综合保障—2026年食堂运转项目 项目编号.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "pending"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 28,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+  "name": "8a69c21f9a63addd019b0ae7075a16e0.pdf",
+  "packages": [
+   1
+  ],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 52,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "9bcb6456bd534853bb617ae00a72ac05",
+  "name": "评测28-项目编号：KY2024-1-292 榆林市中医医院迁建项目 医疗设备购置（全身高端彩超诊断.pdf",
+  "packages": [
+   1,
+   2,
+   3
+  ],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "2": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "3": [
+    [
+     "投标保证金",
+     "excluded"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 10,
+    "pending": 1,
+    "excluded": 0
+   },
+   "2": {
+    "applies": 10,
+    "pending": 1,
+    "excluded": 0
+   },
+   "3": {
+    "applies": 10,
+    "pending": 1,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "a465a17b856a49bcbcd1353ed40e6ed2",
+  "name": "P020260331601313637066.pdf",
+  "packages": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "methods": [
+   "综合评分法"
+  ],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "2": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "3": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ],
+   "4": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 53,
+    "pending": 0,
+    "excluded": 2
+   },
+   "2": {
+    "applies": 53,
+    "pending": 0,
+    "excluded": 2
+   },
+   "3": {
+    "applies": 53,
+    "pending": 0,
+    "excluded": 2
+   },
+   "4": {
+    "applies": 53,
+    "pending": 0,
+    "excluded": 2
+   }
+  }
+ },
+ {
+  "id": "ac0763ea73334ad6bac44deaee38680d",
+  "name": "评测06-公开招标文件.pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 13,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "c51bc03542aa4560b64b6d4730eb588c",
+  "name": "评测23-项目编号：KY2025-3-240 陕西省乒乓球羽毛球网球运动管理中心 乒乓球队科研设备购.pdf",
+  "packages": [
+   1
+  ],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "1": [
+    [
+     "投标保证金",
+     "applies"
+    ],
+    [
+     "最高限价",
+     "applies"
+    ]
+   ]
+  },
+  "applies": {
+   "1": {
+    "applies": 15,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ },
+ {
+  "id": "f64c8c17f304479f878586c1ab26bfdc",
+  "name": "评测22-公开招标文件 采购编号：SZWK2024-Z-G-104号 学校编号：20240038号 .pdf",
+  "packages": [],
+  "methods": [],
+  "license_pages": [],
+  "cards": {
+   "None": [
+    [
+     "投标保证金",
+     "excluded"
+    ]
+   ]
+  },
+  "applies": {
+   "None": {
+    "applies": 8,
+    "pending": 0,
+    "excluded": 0
+   }
+  }
+ }
+]

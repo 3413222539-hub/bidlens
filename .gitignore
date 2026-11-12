@@ -1,0 +1,38 @@
+# 凭据
+.env
+*.env
+!.env.example
+
+# 数据（含真实招标文件与公司档案）
+data/
+profiles/
+uploads/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# 日志与临时产物
+*.log
+*.tmp
+*.bak
+
+# 不要拦截示例数据目录（如将来提供脱敏样本）
+!tests/samples/

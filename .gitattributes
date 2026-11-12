@@ -1,0 +1,28 @@
+# 统一换行符，避免 Windows 提交污染 diff
+* text=auto eol=lf
+
+*.py   text eol=lf
+*.js   text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+Dockerfile text eol=lf
+
+# Windows 脚本保留 CRLF
+*.bat  text eol=crlf
+*.ps1  text eol=crlf
+
+# 二进制
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.ico  binary
+*.sqlite3 binary
+
+# Jupyter：让 git 能看 diff，避免把输出提交进版本库
+*.ipynb diff=jupyter
+*.ipynb linguist-documentation

@@ -1,0 +1,73 @@
+{
+  "workers": 1,
+  "planned": 1,
+  "completed": 1,
+  "summary": {
+    "outcomes": {
+      "fail": 1
+    },
+    "checks": {
+      "status": {
+        "passed": 0,
+        "checked": 1
+      },
+      "answer_anchors": {
+        "passed": 0,
+        "checked": 1
+      },
+      "citation_page_hit": {
+        "passed": 0,
+        "checked": 1
+      }
+    },
+    "latency": {
+      "agent": {
+        "n": 1,
+        "p50_seconds": 6.619,
+        "p95_seconds": 6.619
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "47e3a561-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 6.619,
+      "route": "agent",
+      "status": "invalid_response",
+      "outcome": "fail",
+      "checks": {
+        "status": false,
+        "answer_anchors": false,
+        "citation_page_hit": false
+      },
+      "missing_anchors": [
+        "2025\\-07\\-11"
+      ],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 3585,
+        "prepare": 90,
+        "agent": 2943
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 5
+        }
+      ],
+      "uncovered_pages": []
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "workers": 3,
+  "planned": 3,
+  "completed": 3,
+  "summary": {
+    "outcomes": {
+      "fail": 1,
+      "pass": 2
+    },
+    "checks": {
+      "status": {
+        "passed": 3,
+        "checked": 3
+      },
+      "answer_anchors": {
+        "passed": 1,
+        "checked": 2
+      },
+      "citation_page_hit": {
+        "passed": 3,
+        "checked": 3
+      }
+    },
+    "latency": {
+      "agent": {
+        "n": 3,
+        "p50_seconds": 35.998,
+        "p95_seconds": 36.975
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "1a2c94fe-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 35.998,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "fail",
+      "checks": {
+        "status": true,
+        "answer_anchors": false,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [
+        "独立承担民事责任"
+      ],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0097",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0098",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0029",
+          "page": 5,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 18791,
+        "prepare": 10861,
+        "agent": 6345
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 2
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1683,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 4659
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "97ebd11e-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 30.368,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0529-R4",
+          "page": 38,
+          "page_verified": false
+        },
+        {
+          "id": "E0529-R5",
+          "page": 38,
+          "page_verified": true
+        },
+        {
+          "id": "E0529-R6",
+          "page": 38,
+          "page_verified": true
+        },
+        {
+          "id": "E0529-R8",
+          "page": 39,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages",
+        "search"
+      ],
+      "timing_ms": {
+        "index": 14007,
+        "prepare": 448,
+        "agent": 11902
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1982,
+          "tool_ms": 0,
+          "evidence_pages": [
+            38,
+            39,
+            40
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2026,
+          "tool_ms": 0,
+          "evidence_pages": [
+            38,
+            39
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1756,
+          "tool_ms": 3,
+          "evidence_pages": [
+            7,
+            11,
+            16,
+            18,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 6132
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "team-score",
+      "kind": "评分",
+      "question": "项目团队方案评价最高得几分？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 36.975,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0439-R22",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R2",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R22",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R23",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R2",
+          "page": 39,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 20514,
+        "prepare": 13061,
+        "agent": 3400
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 3398
+        }
+      ],
+      "uncovered_pages": []
+    }
+  ]
+}

@@ -1,0 +1,2812 @@
+{
+  "workers": 1,
+  "planned": 13,
+  "completed": 13,
+  "summary": {
+    "outcomes": {
+      "pass": 13
+    },
+    "checks": {
+      "status": {
+        "passed": 13,
+        "checked": 13
+      },
+      "package_scope": {
+        "passed": 13,
+        "checked": 13
+      },
+      "scoring_items_and_values": {
+        "passed": 13,
+        "checked": 13
+      },
+      "scoring_citation_pages": {
+        "passed": 13,
+        "checked": 13
+      }
+    },
+    "latency": {
+      "rules": {
+        "n": 13,
+        "p50_seconds": 0.053,
+        "p95_seconds": 16.136
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "47e3a561-all",
+      "kind": "标包评分",
+      "question": "所有包怎么评分？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 3.81,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0347-R2",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R3",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R4",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R5",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R6",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R7",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R8",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R9",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R10",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R11",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R12",
+          "page": 35,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 1,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "综合折扣率",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0347-R2",
+                  "page": 33
+                }
+              ]
+            },
+            {
+              "name": "供货方案",
+              "parts": [
+                15,
+                8,
+                7,
+                6,
+                5
+              ],
+              "max_score": 41,
+              "sources": [
+                {
+                  "id": "E0347-R3",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R4",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R5",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R6",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R7",
+                  "page": 34
+                }
+              ]
+            },
+            {
+              "name": "履约能力",
+              "parts": [
+                7,
+                2,
+                10
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "E0347-R8",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R9",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R10",
+                  "page": 35
+                }
+              ]
+            },
+            {
+              "name": "追补订承诺",
+              "parts": [
+                4,
+                6
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0347-R11",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R12",
+                  "page": 35
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2
+          ]
+        },
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "综合折扣率",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0347-R2",
+                  "page": 33
+                }
+              ]
+            },
+            {
+              "name": "供货方案",
+              "parts": [
+                15,
+                8,
+                7,
+                6,
+                5
+              ],
+              "max_score": 41,
+              "sources": [
+                {
+                  "id": "E0347-R3",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R4",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R5",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R6",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R7",
+                  "page": 34
+                }
+              ]
+            },
+            {
+              "name": "履约能力",
+              "parts": [
+                7,
+                2,
+                10
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "E0347-R8",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R9",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R10",
+                  "page": 35
+                }
+              ]
+            },
+            {
+              "name": "追补订承诺",
+              "parts": [
+                4,
+                6
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0347-R11",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R12",
+                  "page": 35
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-two",
+      "kind": "标包评分",
+      "question": "第2包怎么评分？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.03,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0347-R2",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R3",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R4",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R5",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R6",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R7",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R8",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R9",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R10",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R11",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "E0347-R12",
+          "page": 35,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "综合折扣率",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0347-R2",
+                  "page": 33
+                }
+              ]
+            },
+            {
+              "name": "供货方案",
+              "parts": [
+                15,
+                8,
+                7,
+                6,
+                5
+              ],
+              "max_score": 41,
+              "sources": [
+                {
+                  "id": "E0347-R3",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R4",
+                  "page": 33
+                },
+                {
+                  "id": "E0347-R5",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R6",
+                  "page": 34
+                },
+                {
+                  "id": "E0347-R7",
+                  "page": 34
+                }
+              ]
+            },
+            {
+              "name": "履约能力",
+              "parts": [
+                7,
+                2,
+                10
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "E0347-R8",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R9",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R10",
+                  "page": 35
+                }
+              ]
+            },
+            {
+              "name": "追补订承诺",
+              "parts": [
+                4,
+                6
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0347-R11",
+                  "page": 35
+                },
+                {
+                  "id": "E0347-R12",
+                  "page": 35
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-followup",
+      "kind": "标包评分",
+      "question": "那第3包呢？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": "第2包怎么评分？",
+      "seconds": 0.025,
+      "route": "rules",
+      "status": "needs_review",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 3,
+          "max_score": null,
+          "complete": false,
+          "items": []
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-all",
+      "kind": "标包评分",
+      "question": "所有包怎么评分？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 6.128,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P57-factor-1",
+          "page": 57,
+          "page_verified": true
+        },
+        {
+          "id": "P58-factor-2",
+          "page": 58,
+          "page_verified": true
+        },
+        {
+          "id": "P60-factor-3",
+          "page": 60,
+          "page_verified": true
+        },
+        {
+          "id": "P61-factor-4",
+          "page": 61,
+          "page_verified": true
+        },
+        {
+          "id": "P62-factor-1",
+          "page": 62,
+          "page_verified": true
+        },
+        {
+          "id": "P63-factor-2",
+          "page": 63,
+          "page_verified": true
+        },
+        {
+          "id": "P65-factor-3",
+          "page": 65,
+          "page_verified": true
+        },
+        {
+          "id": "P66-factor-4",
+          "page": 66,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 1,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "package": 3,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "package": 4,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "package": 5,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P62-factor-1",
+                  "page": 62
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P63-factor-2",
+                  "page": 63
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                20
+              ],
+              "max_score": 20,
+              "sources": [
+                {
+                  "id": "P65-factor-3",
+                  "page": 65
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                17
+              ],
+              "max_score": 17,
+              "sources": [
+                {
+                  "id": "P66-factor-4",
+                  "page": 66
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            5
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-two",
+      "kind": "标包评分",
+      "question": "第2包怎么评分？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.041,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P57-factor-1",
+          "page": 57,
+          "page_verified": true
+        },
+        {
+          "id": "P58-factor-2",
+          "page": 58,
+          "page_verified": true
+        },
+        {
+          "id": "P60-factor-3",
+          "page": 60,
+          "page_verified": true
+        },
+        {
+          "id": "P61-factor-4",
+          "page": 61,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-followup",
+      "kind": "标包评分",
+      "question": "那第3包呢？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": "第2包怎么评分？",
+      "seconds": 0.03,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P57-factor-1",
+          "page": 57,
+          "page_verified": true
+        },
+        {
+          "id": "P58-factor-2",
+          "page": 58,
+          "page_verified": true
+        },
+        {
+          "id": "P60-factor-3",
+          "page": 60,
+          "page_verified": true
+        },
+        {
+          "id": "P61-factor-4",
+          "page": 61,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 3,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P57-factor-1",
+                  "page": 57
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P58-factor-2",
+                  "page": 58
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                19
+              ],
+              "max_score": 19,
+              "sources": [
+                {
+                  "id": "P60-factor-3",
+                  "page": 60
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                18
+              ],
+              "max_score": 18,
+              "sources": [
+                {
+                  "id": "P61-factor-4",
+                  "page": 61
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-fifth",
+      "kind": "标包评分",
+      "question": "那标段五呢？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": "第2包怎么评分？",
+      "seconds": 0.027,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P62-factor-1",
+          "page": 62,
+          "page_verified": true
+        },
+        {
+          "id": "P63-factor-2",
+          "page": 63,
+          "page_verified": true
+        },
+        {
+          "id": "P65-factor-3",
+          "page": 65,
+          "page_verified": true
+        },
+        {
+          "id": "P66-factor-4",
+          "page": 66,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 5,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                40
+              ],
+              "max_score": 40,
+              "sources": [
+                {
+                  "id": "P62-factor-1",
+                  "page": 62
+                }
+              ]
+            },
+            {
+              "name": "服务方案",
+              "parts": [
+                23
+              ],
+              "max_score": 23,
+              "sources": [
+                {
+                  "id": "P63-factor-2",
+                  "page": 63
+                }
+              ]
+            },
+            {
+              "name": "服务承诺",
+              "parts": [
+                20
+              ],
+              "max_score": 20,
+              "sources": [
+                {
+                  "id": "P65-factor-3",
+                  "page": 65
+                }
+              ]
+            },
+            {
+              "name": "综合实力",
+              "parts": [
+                17
+              ],
+              "max_score": 17,
+              "sources": [
+                {
+                  "id": "P66-factor-4",
+                  "page": 66
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            5
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "9bcb6456-all",
+      "kind": "标包评分",
+      "question": "所有包怎么评分？",
+      "document_id": "9bcb6456bd534853bb617ae00a72ac05",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 10.456,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0254-R1",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R2",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R3",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R4",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R5",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R6",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R7",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R8",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R9",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R10",
+          "page": 27,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 1,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R1",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "技术参数",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R2",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "选型产品",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R3",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "管理体系",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R4",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "供货安排",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R5",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "质量保证",
+              "parts": [
+                10
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0254-R6",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "业绩",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R7",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "售后服务",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R8",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "培训措施",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R9",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "节能环保",
+              "parts": [
+                2
+              ],
+              "max_score": 2,
+              "sources": [
+                {
+                  "id": "E0254-R10",
+                  "page": 27
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R1",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "技术参数",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R2",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "选型产品",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R3",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "管理体系",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R4",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "供货安排",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R5",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "质量保证",
+              "parts": [
+                10
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0254-R6",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "业绩",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R7",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "售后服务",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R8",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "培训措施",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R9",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "节能环保",
+              "parts": [
+                2
+              ],
+              "max_score": 2,
+              "sources": [
+                {
+                  "id": "E0254-R10",
+                  "page": 27
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "package": 3,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R1",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "技术参数",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R2",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "选型产品",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R3",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "管理体系",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R4",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "供货安排",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R5",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "质量保证",
+              "parts": [
+                10
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0254-R6",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "业绩",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R7",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "售后服务",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R8",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "培训措施",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R9",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "节能环保",
+              "parts": [
+                2
+              ],
+              "max_score": 2,
+              "sources": [
+                {
+                  "id": "E0254-R10",
+                  "page": 27
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "9bcb6456-two",
+      "kind": "标包评分",
+      "question": "第2包怎么评分？",
+      "document_id": "9bcb6456bd534853bb617ae00a72ac05",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.048,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0254-R1",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R2",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R3",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R4",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R5",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R6",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R7",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R8",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R9",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R10",
+          "page": 27,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 2,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R1",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "技术参数",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R2",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "选型产品",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R3",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "管理体系",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R4",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "供货安排",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R5",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "质量保证",
+              "parts": [
+                10
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0254-R6",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "业绩",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R7",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "售后服务",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R8",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "培训措施",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R9",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "节能环保",
+              "parts": [
+                2
+              ],
+              "max_score": 2,
+              "sources": [
+                {
+                  "id": "E0254-R10",
+                  "page": 27
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "9bcb6456-followup",
+      "kind": "标包评分",
+      "question": "那第3标段呢？",
+      "document_id": "9bcb6456bd534853bb617ae00a72ac05",
+      "correction_id": null,
+      "previous_question": "第2包怎么评分？",
+      "seconds": 0.065,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0254-R1",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R2",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R3",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R4",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R5",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R6",
+          "page": 26,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R7",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R8",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R9",
+          "page": 27,
+          "page_verified": true
+        },
+        {
+          "id": "E0254-R10",
+          "page": 27,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 3,
+          "max_score": 100,
+          "complete": true,
+          "items": [
+            {
+              "name": "投标报价",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R1",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "技术参数",
+              "parts": [
+                30
+              ],
+              "max_score": 30,
+              "sources": [
+                {
+                  "id": "E0254-R2",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "选型产品",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R3",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "管理体系",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R4",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "供货安排",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R5",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "质量保证",
+              "parts": [
+                10
+              ],
+              "max_score": 10,
+              "sources": [
+                {
+                  "id": "E0254-R6",
+                  "page": 26
+                }
+              ]
+            },
+            {
+              "name": "业绩",
+              "parts": [
+                5
+              ],
+              "max_score": 5,
+              "sources": [
+                {
+                  "id": "E0254-R7",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "售后服务",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R8",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "培训措施",
+              "parts": [
+                4
+              ],
+              "max_score": 4,
+              "sources": [
+                {
+                  "id": "E0254-R9",
+                  "page": 27
+                }
+              ]
+            },
+            {
+              "name": "节能环保",
+              "parts": [
+                2
+              ],
+              "max_score": 2,
+              "sources": [
+                {
+                  "id": "E0254-R10",
+                  "page": 27
+                }
+              ]
+            }
+          ],
+          "score_kind": "overall",
+          "shared_packages": [
+            1,
+            2,
+            3
+          ]
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "ec53a8e2-all",
+      "kind": "标包评分",
+      "question": "所有包怎么评分？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 16.136,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0438-R13",
+          "page": 40,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R14",
+          "page": 41,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R15",
+          "page": 41,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R16",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R17",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R18",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R19",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R20",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R21",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R22",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0438-R23",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R20",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R21",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R22",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R23",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R24",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R25",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R26",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R27",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R28",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R29",
+          "page": 47,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 1,
+          "max_score": 72.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "项目分析",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R13",
+                  "page": 40
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "驻场安全服务方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R14",
+                  "page": 41
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "专项技术检测方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R15",
+                  "page": 41
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "后台服务与响应式服务方案",
+              "parts": [
+                8,
+                7,
+                3
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R16",
+                  "page": 42
+                },
+                {
+                  "id": "E0438-R17",
+                  "page": 42
+                },
+                {
+                  "id": "E0438-R18",
+                  "page": 42
+                }
+              ],
+              "max_score": 18
+            },
+            {
+              "name": "项目实施质量保证方案",
+              "parts": [
+                6
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R19",
+                  "page": 42
+                }
+              ],
+              "max_score": 6
+            },
+            {
+              "name": "绩效及内控管理方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R20",
+                  "page": 43
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "信息保密措施",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R21",
+                  "page": 43
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "实施团队、人员安排",
+              "parts": [
+                10,
+                7
+              ],
+              "sources": [
+                {
+                  "id": "E0438-R22",
+                  "page": 44
+                },
+                {
+                  "id": "E0438-R23",
+                  "page": 44
+                }
+              ],
+              "max_score": 17
+            }
+          ],
+          "score_kind": "technical"
+        },
+        {
+          "package": 2,
+          "max_score": 55.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "整体测评方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R20",
+                  "page": 46
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "安全风险管理方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R21",
+                  "page": 46
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "项目团队方案评价",
+              "parts": [
+                3
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R22",
+                  "page": 46
+                }
+              ],
+              "max_score": 3
+            },
+            {
+              "name": "售后服务方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R23",
+                  "page": 46
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "工具保障",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R24",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "技术团队能力",
+              "parts": [
+                8,
+                10,
+                4,
+                3,
+                4
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R25",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R26",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R27",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R28",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R29",
+                  "page": 47
+                }
+              ],
+              "max_score": 29
+            }
+          ],
+          "score_kind": "technical"
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "ec53a8e2-two",
+      "kind": "标包评分",
+      "question": "第2包怎么评分？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.058,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0439-R20",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R21",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R22",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R23",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R24",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R25",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R26",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R27",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R28",
+          "page": 47,
+          "page_verified": true
+        },
+        {
+          "id": "E0439-R29",
+          "page": 47,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 2,
+          "max_score": 55.0,
+          "complete": true,
+          "items": [
+            {
+              "name": "整体测评方案",
+              "parts": [
+                8
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R20",
+                  "page": 46
+                }
+              ],
+              "max_score": 8
+            },
+            {
+              "name": "安全风险管理方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R21",
+                  "page": 46
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "项目团队方案评价",
+              "parts": [
+                3
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R22",
+                  "page": 46
+                }
+              ],
+              "max_score": 3
+            },
+            {
+              "name": "售后服务方案",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R23",
+                  "page": 46
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "工具保障",
+              "parts": [
+                5
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R24",
+                  "page": 47
+                }
+              ],
+              "max_score": 5
+            },
+            {
+              "name": "技术团队能力",
+              "parts": [
+                8,
+                10,
+                4,
+                3,
+                4
+              ],
+              "sources": [
+                {
+                  "id": "E0439-R25",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R26",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R27",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R28",
+                  "page": 47
+                },
+                {
+                  "id": "E0439-R29",
+                  "page": 47
+                }
+              ],
+              "max_score": 29
+            }
+          ],
+          "score_kind": "technical"
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "ec53a8e2-followup",
+      "kind": "标包评分",
+      "question": "那第3包呢？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": "第2包怎么评分？",
+      "seconds": 0.053,
+      "route": "rules",
+      "status": "needs_review",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "package_scope": true,
+        "scoring_items_and_values": true,
+        "scoring_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [],
+      "package_scores": [
+        {
+          "package": 3,
+          "max_score": null,
+          "complete": false,
+          "items": []
+        }
+      ],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    }
+  ]
+}

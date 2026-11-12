@@ -1,0 +1,2752 @@
+{
+  "workers": 3,
+  "planned": 30,
+  "completed": 30,
+  "summary": {
+    "outcomes": {
+      "pass": 30
+    },
+    "checks": {
+      "status": {
+        "passed": 30,
+        "checked": 30
+      },
+      "answer_anchors": {
+        "passed": 20,
+        "checked": 20
+      },
+      "citation_page_hit": {
+        "passed": 25,
+        "checked": 25
+      },
+      "comparison_values_and_scope": {
+        "passed": 4,
+        "checked": 4
+      },
+      "comparison_citation_pages": {
+        "passed": 3,
+        "checked": 3
+      },
+      "coverage_warning": {
+        "passed": 1,
+        "checked": 1
+      }
+    },
+    "latency": {
+      "agent": {
+        "n": 25,
+        "p50_seconds": 16.222,
+        "p95_seconds": 50.652
+      },
+      "rules": {
+        "n": 5,
+        "p50_seconds": 1.883,
+        "p95_seconds": 9.798
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "1a2c94fe-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 24.918,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0026",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0090",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0097",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0098",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0162",
+          "page": 19,
+          "page_verified": true
+        },
+        {
+          "id": "E0163",
+          "page": 20,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 16035,
+        "prepare": 6,
+        "agent": 8869
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 4
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1938,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5,
+            16
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 6927
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "1a2c94fe-限价",
+      "kind": "限价",
+      "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 29.713,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0021",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "E0020",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "E0739",
+          "page": 72,
+          "page_verified": true
+        },
+        {
+          "id": "E0737",
+          "page": 72,
+          "page_verified": true
+        },
+        {
+          "id": "E0080",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "P13",
+          "page": 13,
+          "page_verified": true
+        },
+        {
+          "id": "P14",
+          "page": 14,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "package_facts",
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 6239,
+        "prepare": 4,
+        "agent": 8919
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1557,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1657,
+          "tool_ms": 4,
+          "evidence_pages": [
+            4,
+            14,
+            16,
+            28,
+            33,
+            39,
+            66,
+            72,
+            79,
+            115
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1785,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            13,
+            14
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 3915
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "1a2c94fe-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 20.765,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P6",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "P14",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "P22",
+          "page": 22,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 15146,
+        "prepare": 187,
+        "agent": 5432
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 3
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1709,
+          "tool_ms": 0,
+          "evidence_pages": [
+            6,
+            14,
+            22
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 3718
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "1a2c94fe-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "1a2c94fe34754ed1a31c64134f922cbd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 7.394,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P36",
+          "page": 36,
+          "page_verified": true
+        },
+        {
+          "id": "P37",
+          "page": 37,
+          "page_verified": true
+        },
+        {
+          "id": "P38",
+          "page": 38,
+          "page_verified": true
+        },
+        {
+          "id": "P39",
+          "page": 39,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 4,
+        "agent": 7389
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 2
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1515,
+          "tool_ms": 0,
+          "evidence_pages": [
+            36,
+            37,
+            38,
+            39
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 5872
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "a465a17b-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 50.632,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0054",
+          "page": 7,
+          "page_verified": true
+        },
+        {
+          "id": "E0175",
+          "page": 24,
+          "page_verified": true
+        },
+        {
+          "id": "E0443-R4",
+          "page": 40,
+          "page_verified": true
+        },
+        {
+          "id": "E0443-R9",
+          "page": 40,
+          "page_verified": true
+        },
+        {
+          "id": "E0059",
+          "page": 7,
+          "page_verified": true
+        },
+        {
+          "id": "E0065",
+          "page": 8,
+          "page_verified": true
+        },
+        {
+          "id": "E0116-R28",
+          "page": 13,
+          "page_verified": true
+        },
+        {
+          "id": "E0179",
+          "page": 24,
+          "page_verified": true
+        },
+        {
+          "id": "E1558-R10",
+          "page": 155,
+          "page_verified": true
+        },
+        {
+          "id": "E1558-R12",
+          "page": 155,
+          "page_verified": false
+        },
+        {
+          "id": "P7",
+          "page": 7,
+          "page_verified": true
+        },
+        {
+          "id": "P8",
+          "page": 8,
+          "page_verified": true
+        },
+        {
+          "id": "P13",
+          "page": 13,
+          "page_verified": true
+        },
+        {
+          "id": "P40",
+          "page": 40,
+          "page_verified": true
+        },
+        {
+          "id": "P155",
+          "page": 155,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 11077,
+        "prepare": 27849,
+        "agent": 11705
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1516,
+          "tool_ms": 0,
+          "evidence_pages": [
+            7,
+            8,
+            13,
+            24
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2132,
+          "tool_ms": 0,
+          "evidence_pages": [
+            7,
+            8
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1681,
+          "tool_ms": 0,
+          "evidence_pages": [
+            40,
+            155
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "invalid",
+          "model_ms": 1609
+        },
+        {
+          "step": 6,
+          "action": "answer",
+          "model_ms": 4765
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "a465a17b-限价",
+      "kind": "限价",
+      "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 33.867,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P14",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "P15",
+          "page": 15,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "package_facts",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 351,
+        "agent": 6831
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1837,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1699,
+          "tool_ms": 0,
+          "evidence_pages": [
+            14,
+            15
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 3295
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "a465a17b-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 34.338,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P8",
+          "page": 8,
+          "page_verified": true
+        },
+        {
+          "id": "P9",
+          "page": 9,
+          "page_verified": true
+        },
+        {
+          "id": "E0353",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0355",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0364",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "E0093",
+          "page": 9,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 29189,
+        "prepare": 132,
+        "agent": 4997
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 3
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1905,
+          "tool_ms": 0,
+          "evidence_pages": [
+            8,
+            9
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 3089
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "a465a17b-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "a465a17b856a49bcbcd1353ed40e6ed2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 14.411,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0445-R2",
+          "page": 41,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R2",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0447-R2",
+          "page": 46,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R13",
+          "page": 41,
+          "page_verified": false
+        },
+        {
+          "id": "E0445-R14",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R15",
+          "page": 42,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R16",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R17",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R18",
+          "page": 43,
+          "page_verified": true
+        },
+        {
+          "id": "E0445-R19",
+          "page": 41,
+          "page_verified": false
+        },
+        {
+          "id": "E0446-R11",
+          "page": 43,
+          "page_verified": false
+        },
+        {
+          "id": "E0446-R12",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R13",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R14",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R15",
+          "page": 44,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R16",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R17",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R18",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R19",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R20",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0446-R21",
+          "page": 45,
+          "page_verified": true
+        },
+        {
+          "id": "E0492",
+          "page": 53,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "search",
+        "read_pages",
+        "package_facts",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 31,
+        "prepare": 148,
+        "agent": 14232
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1620,
+          "tool_ms": 7,
+          "evidence_pages": [
+            31,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            52,
+            53,
+            183,
+            205
+          ],
+          "omitted": 22
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2348,
+          "tool_ms": 1,
+          "evidence_pages": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1881,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1871,
+          "tool_ms": 0,
+          "evidence_pages": [
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 6,
+          "action": "answer",
+          "model_ms": 6502
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 15.835,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P7",
+          "page": 7,
+          "page_verified": true
+        },
+        {
+          "id": "P11",
+          "page": 11,
+          "page_verified": true
+        },
+        {
+          "id": "P12",
+          "page": 12,
+          "page_verified": true
+        },
+        {
+          "id": "E0009-R6",
+          "page": 2,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 3113,
+        "prepare": 2958,
+        "agent": 9764
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1749,
+          "tool_ms": 0,
+          "evidence_pages": [
+            7,
+            8,
+            11,
+            12
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1587,
+          "tool_ms": 0,
+          "evidence_pages": [
+            11,
+            12
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1700,
+          "tool_ms": 0,
+          "evidence_pages": [
+            7
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 4726
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-限价",
+      "kind": "限价",
+      "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 10.332,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P2",
+          "page": 2,
+          "page_verified": true
+        },
+        {
+          "id": "P3",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "P16",
+          "page": 16,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "package_facts",
+        "read_pages",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 1,
+        "agent": 10331
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1351,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1437,
+          "tool_ms": 0,
+          "evidence_pages": [
+            2,
+            3,
+            16
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2127,
+          "tool_ms": 0,
+          "evidence_pages": [
+            2
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2034,
+          "tool_ms": 0,
+          "evidence_pages": [
+            2
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 3381
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 6.4,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0009-R15",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "P3",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "P17",
+          "page": 17,
+          "page_verified": true
+        },
+        {
+          "id": "E0185",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0202",
+          "page": 17,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 1,
+        "agent": 6399
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1588,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3,
+            16,
+            17
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1908,
+          "tool_ms": 0,
+          "evidence_pages": [
+            1,
+            2,
+            3
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 2901
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "072efbb6-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "072efbb61d404e27b3ec9ad6e01365fd",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 14.486,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P57",
+          "page": 57,
+          "page_verified": true
+        },
+        {
+          "id": "P58",
+          "page": 58,
+          "page_verified": true
+        },
+        {
+          "id": "P59",
+          "page": 59,
+          "page_verified": true
+        },
+        {
+          "id": "P60",
+          "page": 60,
+          "page_verified": true
+        },
+        {
+          "id": "P61",
+          "page": 61,
+          "page_verified": true
+        },
+        {
+          "id": "P62",
+          "page": 62,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 1,
+        "prepare": 2,
+        "agent": 14484
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1585,
+          "tool_ms": 0,
+          "evidence_pages": [
+            57,
+            58,
+            59,
+            60,
+            61,
+            62
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1972,
+          "tool_ms": 0,
+          "evidence_pages": [
+            58,
+            59,
+            60,
+            61
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "invalid",
+          "model_ms": 1868
+        },
+        {
+          "step": 5,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1569,
+          "tool_ms": 0,
+          "evidence_pages": [
+            62
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 6,
+          "action": "answer",
+          "model_ms": 7489
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 15.515,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "P6",
+          "page": 6,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 2912,
+        "prepare": 6503,
+        "agent": 6100
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1624,
+          "tool_ms": 0,
+          "evidence_pages": [
+            4,
+            5,
+            6
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "answer",
+          "model_ms": 4474
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-限价",
+      "kind": "限价",
+      "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 19.443,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0020",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0021",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0022",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0026",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0027",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0028",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "E0130",
+          "page": 18,
+          "page_verified": true
+        },
+        {
+          "id": "E0113-R32",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "E0205",
+          "page": 23,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "package_facts",
+        "search",
+        "search"
+      ],
+      "timing_ms": {
+        "index": 1,
+        "prepare": 1,
+        "agent": 12801
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1423,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 2643
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1786,
+          "tool_ms": 1,
+          "evidence_pages": [
+            3,
+            18
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 2701,
+          "tool_ms": 2,
+          "evidence_pages": [
+            14,
+            23,
+            29,
+            54,
+            70
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 4245
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 3.009,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0113-R29",
+          "page": 13,
+          "page_verified": true
+        },
+        {
+          "id": "E0069",
+          "page": 7,
+          "page_verified": true
+        },
+        {
+          "id": "E0113-R30",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "E0215",
+          "page": 24,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 2,
+        "agent": 3006
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 2
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 3003
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "47e3a561-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 8.787,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0345",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "E0346",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "P33",
+          "page": 33,
+          "page_verified": true
+        },
+        {
+          "id": "P34",
+          "page": 34,
+          "page_verified": true
+        },
+        {
+          "id": "P35",
+          "page": 35,
+          "page_verified": true
+        },
+        {
+          "id": "P36",
+          "page": 36,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 1,
+        "agent": 8786
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1626,
+          "tool_ms": 1,
+          "evidence_pages": [
+            2,
+            3,
+            18,
+            20,
+            21,
+            22,
+            28,
+            33,
+            34,
+            35,
+            36,
+            51,
+            52,
+            67,
+            75,
+            79
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1910,
+          "tool_ms": 0,
+          "evidence_pages": [
+            33,
+            34,
+            35,
+            36
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 5248
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "97ebd11e-资格",
+      "kind": "资格",
+      "question": "这份招标文件规定了哪些投标人资格要求？",
+      "document_id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 23.125,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P3",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "P4",
+          "page": 4,
+          "page_verified": true
+        },
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0556-R12",
+          "page": 41,
+          "page_verified": true
+        },
+        {
+          "id": "E0440",
+          "page": 32,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 3442,
+        "prepare": 3629,
+        "agent": 16054
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "invalid",
+          "model_ms": 2631
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2602,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 3039,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 7781
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "97ebd11e-限价",
+      "kind": "限价",
+      "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+      "document_id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 14.505,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P3",
+          "page": 3,
+          "page_verified": true
+        },
+        {
+          "id": "P9",
+          "page": 9,
+          "page_verified": true
+        },
+        {
+          "id": "P19",
+          "page": 19,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "package_facts",
+        "read_pages",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 1,
+        "agent": 10743
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 1364,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1623,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3,
+            9,
+            19
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 3501,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1527,
+          "tool_ms": 0,
+          "evidence_pages": [
+            3,
+            4
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 2727
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "97ebd11e-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 9.971,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0063",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "E0064",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "E0065",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "E0066",
+          "page": 6,
+          "page_verified": true
+        },
+        {
+          "id": "E0265",
+          "page": 21,
+          "page_verified": true
+        },
+        {
+          "id": "E0261",
+          "page": 21,
+          "page_verified": true
+        },
+        {
+          "id": "E0262",
+          "page": 21,
+          "page_verified": true
+        },
+        {
+          "id": "E0266",
+          "page": 21,
+          "page_verified": true
+        },
+        {
+          "id": "E0290",
+          "page": 23,
+          "page_verified": true
+        },
+        {
+          "id": "E0159",
+          "page": 14,
+          "page_verified": true
+        },
+        {
+          "id": "E0268",
+          "page": 22,
+          "page_verified": true
+        },
+        {
+          "id": "E0742",
+          "page": 60,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "search"
+      ],
+      "timing_ms": {
+        "index": 11,
+        "prepare": 126,
+        "agent": 9835
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1643,
+          "tool_ms": 0,
+          "evidence_pages": [
+            6,
+            7
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "invalid",
+          "model_ms": 1831
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1529,
+          "tool_ms": 1,
+          "evidence_pages": [
+            6,
+            19,
+            21,
+            22,
+            23
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "answer",
+          "model_ms": 4828
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "97ebd11e-评分",
+      "kind": "评分",
+      "question": "技术部分有哪些评分项？各项最高多少分？",
+      "document_id": "97ebd11ef50a4c8b91eb7768fc911c7c",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 5.955,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0529-R4",
+          "page": 38,
+          "page_verified": false
+        },
+        {
+          "id": "P38",
+          "page": 38,
+          "page_verified": true
+        },
+        {
+          "id": "P39",
+          "page": 39,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 0,
+        "prepare": 2,
+        "agent": 5953
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1554,
+          "tool_ms": 0,
+          "evidence_pages": [
+            38,
+            39,
+            40
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 1678,
+          "tool_ms": 0,
+          "evidence_pages": [
+            38,
+            39
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 2719
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "安宁庄西路",
+      "kind": "公告比对",
+      "question": "投标截止时间改了吗？",
+      "document_id": "3d011b38aecc4126bd1252989414e9b5",
+      "correction_id": "e2f74754580d429f8c1a1dae772eb800",
+      "previous_question": null,
+      "seconds": 0.113,
+      "route": "rules",
+      "status": "comparison",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "comparison_values_and_scope": true,
+        "comparison_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "reason": null,
+      "sources": [],
+      "changes": [
+        {
+          "field": "投标截止时间",
+          "package": null,
+          "before": "2026-09-22 14:30",
+          "after": "2026-09-28 14:30",
+          "status": "changed"
+        }
+      ],
+      "tools": [],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "新乡医学院",
+      "kind": "公告比对",
+      "question": "第2包限价改了吗？",
+      "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+      "correction_id": "05dd22c211d3453d8716b10184b37ec4",
+      "previous_question": null,
+      "seconds": 8.473,
+      "route": "rules",
+      "status": "comparison",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "comparison_values_and_scope": true,
+        "comparison_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "reason": null,
+      "sources": [],
+      "changes": [
+        {
+          "field": "最高限价",
+          "package": 2,
+          "before": "573290元",
+          "after": "178810元",
+          "status": "changed"
+        }
+      ],
+      "tools": [],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "新乡医学院不存在的标包",
+      "kind": "公告比对",
+      "question": "第6包限价改了吗？",
+      "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+      "correction_id": "05dd22c211d3453d8716b10184b37ec4",
+      "previous_question": null,
+      "seconds": 9.798,
+      "route": "rules",
+      "status": "comparison",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "comparison_values_and_scope": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "reason": null,
+      "sources": [],
+      "changes": [],
+      "tools": [],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "首都机场二标段缺中间版本",
+      "kind": "公告比对",
+      "question": "投标截止时间改了吗？",
+      "document_id": "e31f72fd877e4f009f70d8e10590e54f",
+      "correction_id": "6130719ac3654f8883af6314413f722d",
+      "previous_question": null,
+      "seconds": 1.883,
+      "route": "rules",
+      "status": "comparison",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "comparison_values_and_scope": true,
+        "comparison_citation_pages": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "reason": null,
+      "sources": [],
+      "changes": [
+        {
+          "field": "投标截止时间",
+          "package": null,
+          "before": "2026-03-18 15:00",
+          "after": "2026-04-15 15:30",
+          "status": "needs_review"
+        }
+      ],
+      "tools": [],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "team-score",
+      "kind": "评分",
+      "question": "项目团队方案评价最高得几分？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 54.258,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0439-R22",
+          "page": 46,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 24395,
+        "prepare": 25109,
+        "agent": 4754
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1895,
+          "tool_ms": 4,
+          "evidence_pages": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46
+          ],
+          "omitted": 62
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 2855
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "team-score-followup",
+      "kind": "追问",
+      "question": "评分等级怎么划分？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": "项目团队方案评价最高得几分？",
+      "seconds": 50.652,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0439-R22",
+          "page": 46,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 22055,
+        "prepare": 25257,
+        "agent": 3333
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 1
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 3332
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "performance-deposit",
+      "kind": "金额",
+      "question": "履约保证金是多少？请指出原文。",
+      "document_id": "f64c8c17f304479f878586c1ab26bfdc",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 16.539,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0290",
+          "page": 16,
+          "page_verified": true
+        },
+        {
+          "id": "E0305",
+          "page": 17,
+          "page_verified": true
+        },
+        {
+          "id": "E0161",
+          "page": 10,
+          "page_verified": true
+        },
+        {
+          "id": "E0009",
+          "page": 2,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search"
+      ],
+      "timing_ms": {
+        "index": 4385,
+        "prepare": 6759,
+        "agent": 5394
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1873,
+          "tool_ms": 1,
+          "evidence_pages": [
+            2,
+            8,
+            10,
+            13,
+            14,
+            16,
+            17,
+            19,
+            21,
+            23
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "answer",
+          "model_ms": 3520
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "bid-deposit-waiver",
+      "kind": "金额",
+      "question": "本项目是否收取投标保证金？",
+      "document_id": "f64c8c17f304479f878586c1ab26bfdc",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 0.048,
+      "route": "rules",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "E0161",
+          "page": 10,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [],
+      "timing_ms": null,
+      "steps": [],
+      "uncovered_pages": []
+    },
+    {
+      "id": "unsubstantiated-helicopter",
+      "kind": "证据不足",
+      "question": "文件中是否明确要求投标人必须自有三架直升机？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 35.862,
+      "route": "agent",
+      "status": "needs_review",
+      "outcome": "pass",
+      "checks": {
+        "status": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [
+        "search",
+        "search",
+        "search",
+        "checklist",
+        "search"
+      ],
+      "timing_ms": {
+        "index": 92,
+        "prepare": 24892,
+        "agent": 10879
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1672,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1412,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1422,
+          "tool_ms": 0,
+          "evidence_pages": [
+            5,
+            6,
+            27,
+            33,
+            58,
+            61,
+            81,
+            82,
+            83,
+            84,
+            86,
+            98,
+            125,
+            139
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "checklist",
+          "model_ms": 2021,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1782,
+          "tool_ms": 0,
+          "evidence_pages": [
+            30,
+            35,
+            60,
+            63,
+            74,
+            90,
+            91,
+            109,
+            119,
+            120,
+            128,
+            136,
+            150,
+            151
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 6,
+          "action": "give_up",
+          "model_ms": 2569
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "partial-coverage",
+      "kind": "缺页",
+      "question": "本项目要求投标人持有什么许可证？请引用原文。",
+      "document_id": "8c7fa397c3434c528498b20b36911c44",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 16.222,
+      "route": "agent",
+      "status": "answered",
+      "outcome": "pass",
+      "checks": {
+        "status": true,
+        "answer_anchors": true,
+        "citation_page_hit": true,
+        "coverage_warning": true
+      },
+      "missing_anchors": [],
+      "reason": null,
+      "sources": [
+        {
+          "id": "P5",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0031",
+          "page": 5,
+          "page_verified": true
+        },
+        {
+          "id": "E0905",
+          "page": 82,
+          "page_verified": true
+        },
+        {
+          "id": "E0686",
+          "page": 59,
+          "page_verified": true
+        }
+      ],
+      "changes": [],
+      "tools": [
+        "search",
+        "package_facts",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 3804,
+        "prepare": 3736,
+        "agent": 8681
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1404,
+          "tool_ms": 1,
+          "evidence_pages": [
+            5,
+            25,
+            28,
+            41,
+            44,
+            51,
+            53,
+            59,
+            71,
+            82
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 2012,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2040,
+          "tool_ms": 0,
+          "evidence_pages": [
+            5
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "answer",
+          "model_ms": 3224
+        }
+      ],
+      "uncovered_pages": [
+        3
+      ]
+    }
+  ],
+  "notes": [
+    "初次自动判定 29/30。宝鸡文理学院题的日期格式不同，已对照 PDF 第 7、13 页，并将基线与复测按同一日期规则重算。"
+  ]
+}

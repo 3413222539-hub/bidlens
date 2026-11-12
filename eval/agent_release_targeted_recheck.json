@@ -1,0 +1,231 @@
+{
+  "workers": 1,
+  "planned": 2,
+  "completed": 2,
+  "summary": {
+    "outcomes": {
+      "fail": 1,
+      "pass": 1
+    },
+    "checks": {
+      "status": {
+        "passed": 1,
+        "checked": 2
+      },
+      "answer_anchors": {
+        "passed": 0,
+        "checked": 1
+      },
+      "citation_page_hit": {
+        "passed": 0,
+        "checked": 1
+      }
+    },
+    "latency": {
+      "agent": {
+        "n": 2,
+        "p50_seconds": 28.185,
+        "p95_seconds": 35.467
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "47e3a561-时间",
+      "kind": "时间",
+      "question": "投标截止时间和文件提交方式是什么？",
+      "document_id": "47e3a561f8634b5781911a5327afaa7d",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 20.903,
+      "route": "agent",
+      "status": "invalid_response",
+      "outcome": "fail",
+      "checks": {
+        "status": false,
+        "answer_anchors": false,
+        "citation_page_hit": false
+      },
+      "missing_anchors": [
+        "2025\\-07\\-11"
+      ],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [
+        "search",
+        "read_pages",
+        "search",
+        "read_pages"
+      ],
+      "timing_ms": {
+        "index": 3789,
+        "prepare": 83,
+        "agent": 17030
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "tool_ms": 4
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 5736,
+          "tool_ms": 0,
+          "evidence_pages": [
+            6,
+            7
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "invalid",
+          "model_ms": 4266
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1960,
+          "tool_ms": 3,
+          "evidence_pages": [
+            6,
+            7,
+            21,
+            22,
+            24,
+            25,
+            26,
+            31,
+            53,
+            54,
+            61,
+            62,
+            75
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "tool",
+          "tool": "read_pages",
+          "model_ms": 2791,
+          "tool_ms": 0,
+          "evidence_pages": [
+            13,
+            14
+          ],
+          "omitted": 0
+        }
+      ],
+      "uncovered_pages": []
+    },
+    {
+      "id": "unsubstantiated-helicopter",
+      "kind": "证据不足",
+      "question": "文件中是否明确要求投标人必须自有三架直升机？",
+      "document_id": "ec53a8e2b39e4bbebf86517fe7ba6df2",
+      "correction_id": null,
+      "previous_question": null,
+      "seconds": 35.467,
+      "route": "agent",
+      "status": "needs_review",
+      "outcome": "pass",
+      "checks": {
+        "status": true
+      },
+      "missing_anchors": [],
+      "answer": null,
+      "sources": [],
+      "changes": [],
+      "tools": [
+        "search",
+        "search",
+        "search",
+        "package_facts",
+        "search"
+      ],
+      "timing_ms": {
+        "index": 17983,
+        "prepare": 180,
+        "agent": 17305
+      },
+      "steps": [
+        {
+          "step": 1,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1721,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 2,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 1546,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 3,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 4333,
+          "tool_ms": 1,
+          "evidence_pages": [
+            5,
+            33,
+            39,
+            61,
+            139
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 4,
+          "action": "tool",
+          "tool": "package_facts",
+          "model_ms": 3518,
+          "tool_ms": 0,
+          "evidence_pages": [],
+          "omitted": 0
+        },
+        {
+          "step": 5,
+          "action": "tool",
+          "tool": "search",
+          "model_ms": 2349,
+          "tool_ms": 1,
+          "evidence_pages": [
+            6,
+            27,
+            58,
+            81,
+            82,
+            83,
+            84,
+            86,
+            97,
+            98,
+            125
+          ],
+          "omitted": 0
+        },
+        {
+          "step": 6,
+          "action": "give_up",
+          "model_ms": 3834
+        }
+      ],
+      "uncovered_pages": []
+    }
+  ]
+}

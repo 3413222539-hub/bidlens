@@ -1,0 +1,226 @@
+[
+  {
+    "prefix": "1a2c94fe",
+    "label": "评测02-人民银行征信中心",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条", "独立承担民事责任"],
+    "expect_pages": [16]
+  },
+  {
+    "prefix": "1a2c94fe",
+    "label": "评测02-人民银行征信中心",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["201.00万元", "30,000.00"],
+    "expect_pages": [4, 13]
+  },
+  {
+    "prefix": "1a2c94fe",
+    "label": "评测02-人民银行征信中心",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2025年7月17日"],
+    "expect_pages": [6]
+  },
+  {
+    "prefix": "1a2c94fe",
+    "label": "评测02-人民银行征信中心",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [36, 37, 38]
+  },
+  {
+    "prefix": "a465a17b",
+    "label": "北京政务网站与新媒体",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条"],
+    "expect_pages": [27]
+  },
+  {
+    "prefix": "a465a17b",
+    "label": "北京政务网站与新媒体",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["487.6482", "50000", "2500", "1500"],
+    "expect_pages": [14, 15]
+  },
+  {
+    "prefix": "a465a17b",
+    "label": "北京政务网站与新媒体",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["电子"],
+    "expect_pages": [8, 9]
+  },
+  {
+    "prefix": "a465a17b",
+    "label": "北京政务网站与新媒体",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [41, 42, 43, 44]
+  },
+  {
+    "prefix": "072efbb6",
+    "label": "苏州科大图书采购",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["出版物经营许可证", "出版物进口经营许可证"],
+    "expect_pages": [7]
+  },
+  {
+    "prefix": "072efbb6",
+    "label": "苏州科大图书采购",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["75", "30", "保证金"],
+    "expect_pages": [2, 3, 6]
+  },
+  {
+    "prefix": "072efbb6",
+    "label": "苏州科大图书采购",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2025年12月31日"],
+    "expect_pages": [3]
+  },
+  {
+    "prefix": "072efbb6",
+    "label": "苏州科大图书采购",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [58, 61, 63]
+  },
+  {
+    "prefix": "47e3a561",
+    "label": "宝鸡文理学院",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条"],
+    "expect_pages": [4, 18]
+  },
+  {
+    "prefix": "47e3a561",
+    "label": "宝鸡文理学院",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["160000", "140000", "3100", "2700"],
+    "expect_pages": [3, 14]
+  },
+  {
+    "prefix": "47e3a561",
+    "label": "宝鸡文理学院",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2025年07月11日"],
+    "expect_pages": [7]
+  },
+  {
+    "prefix": "47e3a561",
+    "label": "宝鸡文理学院",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [33, 34, 35]
+  },
+  {
+    "prefix": "97ebd11e",
+    "label": "陕西智慧体育",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条"],
+    "expect_pages": [3, 5]
+  },
+  {
+    "prefix": "97ebd11e",
+    "label": "陕西智慧体育",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["590000", "不收取"],
+    "expect_pages": [3, 9]
+  },
+  {
+    "prefix": "97ebd11e",
+    "label": "陕西智慧体育",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2025年12月8日"],
+    "expect_pages": [6]
+  },
+  {
+    "prefix": "97ebd11e",
+    "label": "陕西智慧体育",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [38, 39]
+  },
+  {
+    "prefix": "9bcb6456",
+    "label": "榆林中医医院",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条"],
+    "expect_pages": [3, 4]
+  },
+  {
+    "prefix": "9bcb6456",
+    "label": "榆林中医医院",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["5600000", "4600000", "3560000"],
+    "expect_pages": [3, 7]
+  },
+  {
+    "prefix": "9bcb6456",
+    "label": "榆林中医医院",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2024年10月"],
+    "expect_pages": [6]
+  },
+  {
+    "prefix": "9bcb6456",
+    "label": "榆林中医医院",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [25, 26, 27, 28, 30, 31, 32]
+  },
+  {
+    "prefix": "c51bc035",
+    "label": "陕西乒羽网球中心",
+    "kind": "资格",
+    "question": "这份招标文件规定了哪些投标人资格要求？",
+    "must_contain": ["第二十二条"],
+    "expect_pages": [3, 15]
+  },
+  {
+    "prefix": "c51bc035",
+    "label": "陕西乒羽网球中心",
+    "kind": "限价",
+    "question": "各标包最高限价是多少？是否要求提交投标保证金？",
+    "must_contain": ["300200", "6000"],
+    "expect_pages": [3, 8, 11]
+  },
+  {
+    "prefix": "c51bc035",
+    "label": "陕西乒羽网球中心",
+    "kind": "时间",
+    "question": "投标截止时间和文件提交方式是什么？",
+    "must_contain": ["2025年11月13日"],
+    "expect_pages": [4]
+  },
+  {
+    "prefix": "c51bc035",
+    "label": "陕西乒羽网球中心",
+    "kind": "评分",
+    "question": "技术部分有哪些评分项？各项最高多少分？",
+    "must_contain": ["分"],
+    "expect_pages": [24]
+  }
+]

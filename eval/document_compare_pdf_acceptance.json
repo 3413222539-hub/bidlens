@@ -1,0 +1,181 @@
+[
+  {
+    "name": "安宁庄西路",
+    "document_id": "3d011b38aecc4126bd1252989414e9b5",
+    "correction_id": "e2f74754580d429f8c1a1dae772eb800",
+    "question": "投标截止时间改了吗？",
+    "status": "comparison",
+    "changes": [
+      {
+        "field": "投标截止时间",
+        "package": null,
+        "before": "2026-09-22 14:30",
+        "after": "2026-09-28 14:30",
+        "status": "changed",
+        "original_sources": [
+          {
+            "id": "E0020",
+            "page": 2,
+            "page_verified": true,
+            "document_id": "3d011b38aecc4126bd1252989414e9b5",
+            "document_label": "原招标文件"
+          }
+        ],
+        "correction_sources": [
+          {
+            "id": "E0005",
+            "page": 1,
+            "page_verified": true,
+            "document_id": "e2f74754580d429f8c1a1dae772eb800",
+            "document_label": "澄清公告"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "新乡医学院",
+    "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+    "correction_id": "05dd22c211d3453d8716b10184b37ec4",
+    "question": "第2包限价改了吗？",
+    "status": "comparison",
+    "changes": [
+      {
+        "field": "最高限价",
+        "package": 2,
+        "before": "573290元",
+        "after": "178810元",
+        "status": "changed",
+        "original_sources": [
+          {
+            "id": "E0038-R3",
+            "page": 5,
+            "page_verified": true,
+            "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+            "document_label": "原招标文件"
+          },
+          {
+            "id": "E0038-R1",
+            "page": 5,
+            "page_verified": false,
+            "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+            "document_label": "原招标文件"
+          }
+        ],
+        "correction_sources": [
+          {
+            "id": "E0109",
+            "page": 8,
+            "page_verified": true,
+            "document_id": "05dd22c211d3453d8716b10184b37ec4",
+            "document_label": "澄清公告"
+          },
+          {
+            "id": "E0112",
+            "page": 8,
+            "page_verified": true,
+            "document_id": "05dd22c211d3453d8716b10184b37ec4",
+            "document_label": "澄清公告"
+          },
+          {
+            "id": "E0113",
+            "page": 8,
+            "page_verified": true,
+            "document_id": "05dd22c211d3453d8716b10184b37ec4",
+            "document_label": "澄清公告"
+          },
+          {
+            "id": "E0110",
+            "page": 8,
+            "page_verified": true,
+            "document_id": "05dd22c211d3453d8716b10184b37ec4",
+            "document_label": "澄清公告"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "新乡医学院不存在的标包",
+    "document_id": "89ec8c1a075349e6b25ccc41c73a22d7",
+    "correction_id": "05dd22c211d3453d8716b10184b37ec4",
+    "question": "第6包限价改了吗？",
+    "status": "comparison",
+    "changes": []
+  },
+  {
+    "name": "首都机场二标段缺中间版本",
+    "document_id": "e31f72fd877e4f009f70d8e10590e54f",
+    "correction_id": "6130719ac3654f8883af6314413f722d",
+    "question": "投标截止时间改了吗？",
+    "status": "comparison",
+    "changes": [
+      {
+        "field": "投标截止时间",
+        "package": null,
+        "before": "2026-03-18 15:00",
+        "after": "2026-04-15 15:30",
+        "status": "needs_review",
+        "original_sources": [
+          {
+            "id": "E0023",
+            "page": 3,
+            "page_verified": true,
+            "document_id": "e31f72fd877e4f009f70d8e10590e54f",
+            "document_label": "原招标文件"
+          },
+          {
+            "id": "E0026",
+            "page": 4,
+            "page_verified": true,
+            "document_id": "e31f72fd877e4f009f70d8e10590e54f",
+            "document_label": "原招标文件"
+          }
+        ],
+        "correction_sources": [
+          {
+            "id": "E0005",
+            "page": 1,
+            "page_verified": true,
+            "document_id": "6130719ac3654f8883af6314413f722d",
+            "document_label": "澄清公告"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "延庆区小微水体",
+    "document_id": "7244eaae4a964ee9aabc5606cbe34e56",
+    "correction_id": "7acd99ce31ab4c79bc9a2207ffd7e2b5",
+    "question": "投标截止时间改了吗？",
+    "status": "comparison",
+    "changes": [
+      {
+        "field": "投标截止时间",
+        "package": null,
+        "before": "2026-09-15 10:00",
+        "after": "2026-09-16 09:30",
+        "status": "needs_review",
+        "original_sources": [
+          {
+            "id": "E0099-R44",
+            "page": 13,
+            "page_verified": false,
+            "document_id": "7244eaae4a964ee9aabc5606cbe34e56",
+            "document_label": "原招标文件"
+          }
+        ],
+        "correction_sources": [
+          {
+            "id": "E0012",
+            "page": 1,
+            "page_verified": true,
+            "document_id": "7acd99ce31ab4c79bc9a2207ffd7e2b5",
+            "document_label": "澄清公告"
+          }
+        ]
+      }
+    ]
+  }
+]
