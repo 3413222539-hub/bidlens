@@ -25,7 +25,7 @@ jobs:
       - run: python -m pip install -r requirements-dev.txt
       - run: python -m pytest -q tests/test_revision_demo.py tests/test_document_cache.py tests/test_document_compare.py tests/test_qa_evidence.py tests/test_team_sharing.py
       - run: node --check web/workspace.js
-      - run: python -m pytest -q tests/test_config.py tests/test_revision_chain.py tests/test_revision_api.py
+      - run: python -m pytest -q tests/test_config.py tests/test_revision_chain.py tests/test_revision_api.py tests/test_package_subcontract.py
       - run: python scripts/smoke_clean.py --output data/clean-smoke.json
   docker:
     runs-on: ubuntu-latest

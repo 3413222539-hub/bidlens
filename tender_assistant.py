@@ -40,6 +40,7 @@ def find_candidates(search, question, max_chars=9000, max_blocks=70):
     ranked = sorted(
         enumerate(blocks),
         key=lambda pair: (
+            pair[0] if pair[1].get("qualification_context") else len(blocks),
             # 保留信息密度高、有数字、有句读的证据
             not re.search(r"[0-9０-９]", pair[1]["text"]),
             len(pair[1]["text"]) < 12,

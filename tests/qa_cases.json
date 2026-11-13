@@ -13,7 +13,8 @@
     "kind": "限价",
     "question": "各标包最高限价是多少？是否要求提交投标保证金？",
     "must_contain": ["201.00万元", "30,000.00"],
-    "expect_pages": [4, 13]
+    "expect_pages": [4, 13],
+    "required_source_pages": [4, 13]
   },
   {
     "prefix": "1a2c94fe",
@@ -37,7 +38,7 @@
     "kind": "资格",
     "question": "这份招标文件规定了哪些投标人资格要求？",
     "must_contain": ["第二十二条"],
-    "expect_pages": [27]
+    "expect_pages": [7, 24, 27]
   },
   {
     "prefix": "a465a17b",
@@ -61,7 +62,8 @@
     "kind": "评分",
     "question": "技术部分有哪些评分项？各项最高多少分？",
     "must_contain": ["分"],
-    "expect_pages": [41, 42, 43, 44]
+    "expect_pages": [42, 43, 44, 45, 47, 48, 49, 50],
+    "technical_totals": {"1": 68, "2": 82, "3": 65, "4": 78}
   },
   {
     "prefix": "072efbb6",

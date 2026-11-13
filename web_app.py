@@ -29,6 +29,7 @@ from document_compare import (
 )
 from document_import import IMPORTS, MAX_BYTES, copy_pdf, create_job, pdf_name, read_job, run_import, save_job, url_name
 from package_scoring import package_score_answer, scoring_scope
+from package_subcontract import answer_subcontract, subcontract_question
 from package_review import answer_package_fact, checklist_card, package_checklist, read_package_facts
 from retrieve_evidence import DATA, DOCUMENT, units_from
 from risk_review import extract_items
@@ -1100,6 +1101,9 @@ def ask(payload: Question):
         answer = answer_package_fact(question, checklist_facts(payload.document_id))
         if answer:
             return answer
+    if payload.document_id != "sample" and subcontract_question(question):
+        _, (units, _) = comparison_files(payload.document_id)
+        return answer_subcontract(question, units, previous)
     scoring = scoring_scope(question, previous)
     if scoring is not None and payload.document_id != "sample":
         _, (units, pages) = comparison_files(payload.document_id)

@@ -151,3 +151,15 @@ def test_short_explicit_disqualification_keeps_its_original_page():
     items, _, _ = collect_candidates(units, ["", text])
     assert [item["id"] for item in items] == ["E1"]
     assert items[0]["sources"][0]["page"] == 2
+
+
+def test_qualification_overview_preserves_notice_under_candidate_budget():
+    units = [
+        block("E1", 4, "二、申请人的资格要求："),
+        block("E2", 4, "满足《中华人民共和国政府采购法》第二十二条规定；"),
+        block("E3", 18, "1. 投标人的资格要求"),
+        block("E4", 18, "2. 按前附表规定执行。"),
+    ]
+    search = RoutedSearch(SearchIndex(units[2:]), SearchIndex(units))
+    results = tender_assistant.find_candidates(search, "有哪些投标人资格要求？", max_blocks=2)
+    assert "E2" in results

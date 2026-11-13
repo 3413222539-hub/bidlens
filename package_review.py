@@ -256,6 +256,17 @@ def deposit_card(deposits, items, selected, requires_selection):
 
 def answer_package_fact(question, facts):
     """Resolve a standalone amount question using the same facts as the checklist."""
+    if re.fullmatch(r"\s*(?:各标包|各采购包|本项目)?最高限价(?:是)?多少[？?；;，,]\s*是否(?:要求|需要)提交投标保证金[？?]?\s*", question):
+        # For a project with no identified packages, these are project-wide facts.
+        # Leave multi-package questions to the existing evidence-based workflow.
+        if facts[0]:
+            return None
+        answers = [answer_package_fact(part, facts) for part in ("最高限价", "投标保证金")]
+        if all(answer and answer["status"] == "answered" for answer in answers):
+            return {"status": "answered", "answer": "\n".join(answer["answer"] for answer in answers),
+                    "conditions": [], "sources": unique_sources(
+                        source for answer in answers for source in answer["sources"])}
+        return next((answer for answer in answers if answer and answer["status"] == "needs_review"), None)
     query = normalize(question)
     scope = PACKAGE.search(query)
     if scope:

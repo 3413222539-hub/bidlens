@@ -22,6 +22,8 @@ CATEGORIES = {
 AMOUNT = r"(?:[¥￥]\s*)?(?:[0-9][0-9,.，]*\s*(?:万\s*)?元|[壹贰叁肆伍陆柒捌玖拾佰仟万]+(?:圆|元)|[¥￥]\s*[0-9][0-9,.，]*)"
 # 评分表行/表头特征：分值、满分值、评审因素、评分标准等
 SCORE_MARK = (r"评审因素|评分标准|评分细则|满分值|分值构成|分值|满分|[0-9]+(?:\.[0-9]+)?\s*分")
+QUALIFICATION_OVERVIEW = re.compile(r"(?:哪些|什么|有哪几项).{0,12}资格(?:要求|条件)|资格(?:要求|条件).{0,10}(?:有哪些|是什么|是什么样)")
+QUALIFICATION_HEADING = re.compile(r"^(?:[一二三四五六七八九十\d]+[、.．]\s*)?(?:申请人|投标人|供应商)的?资格(?:要求|条件)\s*[:：]?$")
 FACT_PATTERNS = (
     (r"保证金", r"投标保证金[^\n]{0,100}?(?:" + AMOUNT + r"|不收取|不提交|不需要|无需|免收)"),
     (r"最高限价|限价", r"最高限价[^\n]{0,44}?(?:" + AMOUNT + r"|[（(]元[)）]\s*[:：]?\s*[0-9][0-9,.，]*)"),
@@ -306,6 +308,12 @@ class RoutedSearch:
         index = self.rows if use_rows else self.whole
         baseline = index.search(question, boost, limit)
         extra = []
+        if boost and QUALIFICATION_OVERVIEW.search(question):
+            headings = [unit for unit in self.rows.units
+                        if unit.get("row") is None and QUALIFICATION_HEADING.fullmatch(unit["text"].strip())]
+            headings.sort(key=lambda unit: unit["page"])
+            extra.extend({**unit, "qualification_context": True}
+                         for unit in self.rows.contextualize(headings[:2]))
         if boost and re.search(CATEGORIES["评分"], question):
             # 评分问题：评分表里很少出现「技术部分」这类问法，直接按分值特征召回
             scored = self.rows.search(question, boost, limit=6, required=SCORE_MARK)
