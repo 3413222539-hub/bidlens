@@ -192,16 +192,19 @@ def announced_changes(units, pages):
 
 
 def citations(sources, document_id, label):
-    return list({source["id"]: {**source, "document_id": document_id, "document_label": label}
+    return list({source["id"]: {**source, "document_id": source.get("document_id", document_id), "document_label": source.get("document_label", label)}
                  for source in sources}.values())
 
 
-def license_changes(original, correction, packages, selected, original_id, correction_id, question):
+def license_changes(original, correction, packages, selected, original_id, correction_id, question, effective=None):
     original_clauses = []
     for text, source in read_clauses(*original):
         names = set(LICENSE_NAME.findall(text))
         if names and REQUIREMENT.search(text) and not (NON_QUALIFICATION.search(text) or REMOVAL.search(text)):
             original_clauses.append((comparison_packages(text), names, source))
+
+    if effective is not None:
+        original_clauses = effective
 
     explicit_names = set(LICENSE_NAME.findall(question))
     known_names = {name for _, names, _ in original_clauses for name in names}
@@ -271,7 +274,7 @@ def license_changes(original, correction, packages, selected, original_id, corre
     return rows
 
 
-def compare_documents(facts, original, correction, fields, selected, original_id, correction_id, question=""):
+def compare_documents(facts, original, correction, fields, selected, original_id, correction_id, question="", effective=None):
     packages, _, limits, _, _ = facts
     originals = {LIMIT: [(set() if package is None else {package}, (yuan(amount), amount), sources)
                          for sources, amounts in limits for package, amount in amounts.items()],
@@ -279,6 +282,8 @@ def compare_documents(facts, original, correction, fields, selected, original_id
     if LIMIT in fields:
         originals[LIMIT].extend(original_package_limits(original[0]))
     packages = packages | {package for scope, _, _ in originals[LIMIT] for package in scope}
+    if effective is not None:
+        originals = {field: effective[field] for field in (LIMIT, DEADLINE)}
     grouped = defaultdict(list)
     for field, scope, old, new, sources in announced_changes(*correction):
         if field not in fields or selected and scope and not selected & scope:
@@ -326,7 +331,8 @@ def compare_documents(facts, original, correction, fields, selected, original_id
             "correction_sources": citations((source for _, _, sources in entries for source in sources), correction_id, "澄清公告"),
         })
     if QUALIFICATION in fields:
-        rows.extend(license_changes(original, correction, packages, selected, original_id, correction_id, question))
+        rows.extend(license_changes(original, correction, packages, selected, original_id, correction_id, question,
+                                    effective.get(QUALIFICATION) if effective is not None else None))
     return {"status": "comparison", "changes": rows}
 
 

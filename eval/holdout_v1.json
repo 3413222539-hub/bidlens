@@ -1,0 +1,314 @@
+{
+  "version": "holdout-v1",
+  "frozen_at": "2026-11-13",
+  "description": "首次运行前冻结；3份新PDF，15题，AI辅助按PDF核对，尚未经独立行业专家复核。观察结果后用于调优须更名为开发集。",
+  "documents": [
+    {
+      "id": "pingnan",
+      "url": "https://guangxi.chinatax.gov.cn/guigang/tzgg_15336/xjtzgg_15338/202605/P020260511404405035113.pdf",
+      "sha256": "ecdee63089f51ad5d85b873fdeb80baa3ec536f6220ccd6f9497ab62aedaff0f",
+      "pages": 102,
+      "previous_pdf_sha256_matches": 0
+    },
+    {
+      "id": "yancheng",
+      "url": "https://old.yctu.edu.cn/_upload/article/files/48/8d/a473d57a46b1ab828e6a7da0bd29/95d30625-7d33-4e5d-bdd9-d6d8c3de1720.pdf",
+      "sha256": "610b01c3df1e4d9800ad4025b62b37d1c2ba2fc55aa4d9a4bfdf74bd3a2f5fec",
+      "pages": 42,
+      "previous_pdf_sha256_matches": 0
+    },
+    {
+      "id": "cpu",
+      "url": "https://cgzx.cpu.edu.cn/cms/contentwh/download.htm?attachmentid=af0c72541527411f80fd190255016d57",
+      "sha256": "ff9c41bfe6c1efaefdecfa311a7e41d88b97d62c3aa31ccb4b69fff9c04c58ce",
+      "pages": 75
+    }
+  ],
+  "cases": [
+    {
+      "document": "pingnan",
+      "id": "pingnan-limit",
+      "question": "本项目最高限价是多少？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "最高限价120万元",
+          "pattern": "120(?:\\.0+)?万|1200000(?:\\.0+)?"
+        }
+      ]
+    },
+    {
+      "document": "pingnan",
+      "id": "pingnan-validity",
+      "question": "投标有效期多长，从哪一天起算？",
+      "pages": [
+        11
+      ],
+      "atoms": [
+        {
+          "fact": "90日历日",
+          "pattern": "90(?:个)?(?:日历日|天|日)"
+        },
+        {
+          "fact": "提交投标文件截止日起算",
+          "pattern": "截止.{0,15}(?:起|计算)|(?:从|自).{0,15}截止"
+        }
+      ]
+    },
+    {
+      "document": "pingnan",
+      "id": "pingnan-term",
+      "question": "物业服务合同的开始日期、结束日期和总期限分别是什么？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "2026年6月1日",
+          "pattern": "2026(?:年|[-/])0?6(?:月|[-/])0?1"
+        },
+        {
+          "fact": "2027年5月31日",
+          "pattern": "2027(?:年|[-/])0?5(?:月|[-/])31"
+        },
+        {
+          "fact": "合同期限1年",
+          "pattern": "(?:1|一)年"
+        }
+      ]
+    },
+    {
+      "document": "pingnan",
+      "id": "pingnan-eligibility",
+      "question": "可以联合投标吗？本项目是否另外要求特定资质？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不接受联合体",
+          "pattern": "不接受.{0,8}联合体|联合体.{0,8}(?:不接受|不允许)"
+        },
+        {
+          "fact": "无特定资格",
+          "pattern": "特定.{0,12}(?:无|没有|不要求)|(?:无|没有).{0,12}特定"
+        }
+      ]
+    },
+    {
+      "document": "pingnan",
+      "id": "pingnan-subcontract",
+      "question": "中标后能把非主体、非关键性工作分包出去吗？",
+      "pages": [
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "采购包1不允许",
+          "pattern": "不允许|不得|不能"
+        }
+      ]
+    },
+    {
+      "document": "yancheng",
+      "id": "yancheng-deposit",
+      "question": "投标保证金要缴纳多少？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "不收取保证金",
+          "pattern": "不收取|无需.{0,5}(?:缴|交)|免收"
+        }
+      ]
+    },
+    {
+      "document": "yancheng",
+      "id": "yancheng-copies",
+      "question": "纸质投标文件正本和副本各要几份？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "正本1份",
+          "pattern": "正本.{0,5}(?:1|一)份"
+        },
+        {
+          "fact": "副本4份",
+          "pattern": "副本.{0,5}(?:4|四)份"
+        }
+      ]
+    },
+    {
+      "document": "yancheng",
+      "id": "yancheng-social",
+      "question": "项目负责人养老保险证明要求是什么？外包缴纳和法人本人担任分别怎么处理？",
+      "pages": [
+        3,
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "正式职工",
+          "pattern": "正式职工|正式员工"
+        },
+        {
+          "fact": "截止前6个月内任意1个月",
+          "pattern": "(?:6|六)个月.{0,15}(?:1|一)个月"
+        },
+        {
+          "fact": "外包须合同及同期社保证明",
+          "pattern": "外包.{0,30}合同"
+        },
+        {
+          "fact": "法人本人担任无需本人社保证明",
+          "pattern": "法定代表人.{0,80}(?:不需要|无需).{0,20}社保"
+        }
+      ]
+    },
+    {
+      "document": "yancheng",
+      "id": "yancheng-service",
+      "question": "外文电子图书服务的服务期是哪段时间？",
+      "pages": [
+        19,
+        20
+      ],
+      "atoms": [
+        {
+          "fact": "2026年1月至12月",
+          "pattern": "2026.{0,12}1月.{0,12}12月|2026.{0,12}01.{0,20}12"
+        }
+      ]
+    },
+    {
+      "document": "yancheng",
+      "id": "yancheng-validity",
+      "question": "投标有效期从什么时候算起，共多少天？",
+      "pages": [
+        9
+      ],
+      "atoms": [
+        {
+          "fact": "开标之日后",
+          "pattern": "开标.{0,12}(?:后|起)"
+        },
+        {
+          "fact": "60天",
+          "pattern": "60(?:个)?(?:天|日)"
+        }
+      ]
+    },
+    {
+      "document": "cpu",
+      "id": "cpu-budget",
+      "question": "三个包的预算金额分别是多少？请区分预算与最高限价。",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "包1预算80万元",
+          "pattern": "(?:包1|1包|包一|一包).{0,40}80(?:\\.0+)?万"
+        },
+        {
+          "fact": "包2预算70万元",
+          "pattern": "(?:包2|2包|包二|二包).{0,40}70(?:\\.0+)?万"
+        },
+        {
+          "fact": "包3预算20万元",
+          "pattern": "(?:包3|3包|包三|三包).{0,40}20(?:\\.0+)?万"
+        },
+        {
+          "fact": "最高限价是报价折扣100%",
+          "pattern": "100%|百分之百"
+        }
+      ]
+    },
+    {
+      "document": "cpu",
+      "id": "cpu-deposit",
+      "question": "包1、包2和包3的投标保证金各是多少？",
+      "pages": [
+        9
+      ],
+      "atoms": [
+        {
+          "fact": "包1为15000元",
+          "pattern": "(?:包1|1包|包一|一包).{0,30}(?:15000|1\\.5万)"
+        },
+        {
+          "fact": "包2为14000元",
+          "pattern": "(?:包2|2包|包二|二包).{0,30}(?:14000|1\\.4万)"
+        },
+        {
+          "fact": "包3为3000元",
+          "pattern": "(?:包3|3包|包三|三包).{0,30}(?:3000|0\\.3万)"
+        }
+      ]
+    },
+    {
+      "document": "cpu",
+      "id": "cpu-multi",
+      "question": "可以同时投多个包并同时中标吗？前一个包已推荐中标后，后续包如何处理？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "可同时投多个包",
+          "pattern": "可以.{0,15}多|可.{0,10}同时"
+        },
+        {
+          "fact": "不可兼中",
+          "pattern": "不可兼中|不能.{0,10}同时中标|不得兼中"
+        },
+        {
+          "fact": "前包推荐后不再参加后续评审",
+          "pattern": "不再参与.{0,15}(?:评审|后续)|不再参加.{0,15}(?:评审|后续)"
+        }
+      ]
+    },
+    {
+      "document": "cpu",
+      "id": "cpu-validity",
+      "question": "投标有效期是多久，起算点是什么？",
+      "pages": [
+        9
+      ],
+      "atoms": [
+        {
+          "fact": "90天",
+          "pattern": "90(?:个)?(?:天|日)"
+        },
+        {
+          "fact": "开标日起",
+          "pattern": "开标.{0,10}(?:起|计算)"
+        }
+      ]
+    },
+    {
+      "document": "cpu",
+      "id": "cpu-term",
+      "question": "各包的合同履行期限到哪一天，什么时候开始？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "自合同签订日起",
+          "pattern": "合同签订.{0,10}(?:起|开始)|自.{0,5}合同签订"
+        },
+        {
+          "fact": "2027年6月30日",
+          "pattern": "2027(?:年|[-/])0?6(?:月|[-/])30"
+        }
+      ]
+    }
+  ],
+  "frozen_sha256": "7696935c59013c9313cd31e713d7151cdff65c38b7f83a7a5c2e630da3609a30"
+}

@@ -28,14 +28,8 @@ def open_mineru(request, timeout, operation, upload=None, retry=True):
 
 
 def read_token():
-    env_path = Path(__file__).with_name(".env")
-    for line in env_path.read_text(encoding="utf-8-sig").splitlines():
-        name, separator, value = line.partition("=")
-        if separator and name.strip() == "MINERU_API_TOKEN":
-            token = value.strip().strip('"\'')
-            if token:
-                return token
-    raise ValueError("请在项目 .env 中配置 MINERU_API_TOKEN")
+    from app_config import require
+    return require("MINERU_API_TOKEN")["MINERU_API_TOKEN"]
 
 
 def call_api(path, token, payload=None):

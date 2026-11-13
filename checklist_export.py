@@ -82,7 +82,7 @@ def card(item, confirmed):
         f'<h3>{escape(item.get("title", ""))}</h3>',
     ]
     if item.get("review_blocked"):
-        parts.append('<span class="tag pending">待授权</span>')
+        parts.append('<span class="tag pending">暂停确认</span>')
     elif item.get("id") in confirmed:
         parts.append('<span class="done">已确认</span>')
     elif item.get("change_revision") or item.get("price_revision"):
@@ -101,6 +101,13 @@ def card(item, confirmed):
             name = escape(previous.get("by") or "未知")
             at = escape(previous.get("at") or "时间未记录")
             parts.append(f'<div class="row muted">历史确认 · {name} · {at}</div>')
+    for event in item.get("revision_history", []):
+        parts.append(f'<div class="row"><b>变更历史 · {escape(event["effective_at"])}</b>{escape(event["before"])} → {escape(event["after"])}</div>')
+        for label, key in (("之前依据", "original_sources"), ("本次公告", "correction_sources")):
+            for source in event[key]:
+                parts.append(f'<div class="row src">{label} · {escape(source.get("document_label", "原文依据"))} · 第 {source["page"]} 页</div>')
+        if record := event.get("previous_confirmation"):
+            parts.append(f'<div class="row muted">变更前确认 · {escape(record.get("by", ""))} · {escape(record.get("at", ""))}</div>')
     if item.get("scope"):
         parts.append(f'<div class="row muted">{escape(item["scope"])}</div>')
     branches = item.get("branches") or []

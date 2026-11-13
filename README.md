@@ -112,8 +112,11 @@ python -m uvicorn web_app:app --port 8780
 
 ### 方式一：Docker
 
+需要 Docker 引擎和 Docker Compose 2.24 或更新版本。默认仅绑定本机。未配置 `.env` 时可以体验演示，导入真实文件前需配置解析和模型服务。
+
 ```bash
-git clone <repo> && cd tender-review
+git clone https://github.com/3413222539-hub/bidlens.git
+cd bidlens
 cp .env.example .env      # 填入下面三个 Key
 docker compose up --build
 ```
@@ -259,7 +262,8 @@ pytest tests -q -m "not live"
 ## 已知限制
 
 - **仅支持 PDF**。Word / Excel 招标文件需先转换。
-- **每份原文件可关联一份澄清公告**。复核联动覆盖可识别的最高限价、投标截止时间和证照资格变更。
+- **公告变更范围**。可关联多份公告并设置生效时间。自动比对覆盖可识别的最高限价、投标截止时间和证照资格。冲突项暂停确认，旧确认保留在变更历史中。操作见[使用说明](docs/quickstart.md)。
+- **独立问答评测**。三种方案在 3 份新文件上的结果和错例见[评测报告](docs/holdout-v1-report.md)。
 - **抽取规则是长尾**。许可证只识别「标段 X 须具有《…许可证》」句式；限价只识别「最高限价 / 合同包最高限价」。分段写法等变体需要补规则，因此有回归测试兜底。
 - **扫描件效果取决于 OCR**。`uncovered_pages` 会标出无法提取文字的页。
 - **未解析页不参与结论**。只提示存在，不猜测内容。

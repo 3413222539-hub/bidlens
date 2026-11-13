@@ -4,6 +4,7 @@ import hashlib
 import secrets
 import sqlite3
 import time
+import json
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
@@ -42,6 +43,8 @@ def initialize():
         CREATE TABLE IF NOT EXISTS group_members(group_id INTEGER REFERENCES groups, name TEXT REFERENCES users, PRIMARY KEY(group_id,name));
         CREATE TABLE IF NOT EXISTS group_files(group_id INTEGER REFERENCES groups, doc TEXT NOT NULL, PRIMARY KEY(group_id,doc));
         CREATE TABLE IF NOT EXISTS corrections(doc TEXT PRIMARY KEY, correction TEXT);
+        CREATE TABLE IF NOT EXISTS revision_sets(doc TEXT PRIMARY KEY, payload TEXT NOT NULL, version TEXT NOT NULL);
+        CREATE TABLE IF NOT EXISTS revision_events(id INTEGER PRIMARY KEY, doc TEXT, reviewer TEXT, at TEXT, payload TEXT, version TEXT);
         CREATE TABLE IF NOT EXISTS migrated(doc TEXT PRIMARY KEY);
         CREATE TABLE IF NOT EXISTS confirmations(
             doc TEXT, scope TEXT, item TEXT, reviewer TEXT, at TEXT, PRIMARY KEY(doc,scope,item));
@@ -198,6 +201,27 @@ def correction(doc, target=None):
                 db.execute("DELETE FROM corrections WHERE doc=?", (doc,))
         row = db.execute("SELECT correction FROM corrections WHERE doc=?", (doc,)).fetchone()
         return row[0] if row else ""
+
+
+def revisions(doc, entries=None, expected=None, reviewer='本地用户'):
+    from revision_chain import fingerprint
+    empty = {'entries': [], 'version': fingerprint([])}
+    if entries is None and not DB.is_file():
+        return empty
+    initialize()
+    with connect() as db:
+        db.execute('BEGIN IMMEDIATE')
+        row = db.execute('SELECT payload,version FROM revision_sets WHERE doc=?', (doc,)).fetchone()
+        result = {'entries': json.loads(row['payload']), 'version': row['version']} if row else empty
+        if entries is not None:
+            if expected != result['version']:
+                raise ValueError('公告列表已被其他人修改，请刷新后重试')
+            payload, version = json.dumps(entries, ensure_ascii=False), fingerprint(entries)
+            db.execute('INSERT INTO revision_sets VALUES (?,?,?) ON CONFLICT(doc) DO UPDATE SET payload=excluded.payload,version=excluded.version', (doc,payload,version))
+            db.execute('INSERT INTO revision_events(doc,reviewer,at,payload,version) VALUES (?,?,?,?,?)',
+                       (doc,reviewer,datetime.now(timezone.utc).isoformat(),payload,version))
+            result = {'entries': entries, 'version': version}
+        return result
 
 
 def confirmations(doc, legacy, change=None):

@@ -67,16 +67,8 @@ def find_candidates(search, question, max_chars=9000, max_blocks=70):
 
 
 def load_config():
-    required = {"DASHSCOPE_API_KEY", "DASHSCOPE_BASE_URL", "DASHSCOPE_MODEL"}
-    config = {}
-    for line in Path(__file__).with_name(".env").read_text(encoding="utf-8-sig").splitlines():
-        name, separator, value = line.partition("=")
-        if separator and name.strip() in required:
-            config[name.strip()] = value.strip().strip("\"'")
-    missing = sorted(name for name in required if not config.get(name))
-    if missing:
-        raise ValueError("缺少模型配置：" + ", ".join(missing))
-    return config
+    from app_config import require
+    return require("DASHSCOPE_API_KEY", "DASHSCOPE_BASE_URL", "DASHSCOPE_MODEL")
 
 
 def ask_model(question, candidates, config, previous_question="", uncovered_pages=()):
@@ -150,6 +142,8 @@ def request_json(system_prompt, model_input, config, max_tokens):
                        getattr(error, "code", None), (perf_counter() - started) * 1000)
         raise
     usage = result.get("usage") or {}
+    from model_usage import record_usage
+    record_usage(payload["model"], usage, perf_counter() - started)
     logger.info("model_request model=%s elapsed_ms=%.0f input_tokens=%s output_tokens=%s",
                 payload["model"], (perf_counter() - started) * 1000,
                 usage.get("prompt_tokens"), usage.get("completion_tokens"))
@@ -191,6 +185,8 @@ def agent_messages_json(messages, config, max_tokens):
                        (perf_counter() - started) * 1000)
         raise
     usage = result.get("usage") or {}
+    from model_usage import record_usage
+    record_usage(payload["model"], usage, perf_counter() - started)
     logger.info("agent_request elapsed_ms=%.0f input_tokens=%s output_tokens=%s",
                 (perf_counter() - started) * 1000,
                 usage.get("prompt_tokens"), usage.get("completion_tokens"))

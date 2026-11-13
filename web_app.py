@@ -35,6 +35,7 @@ from risk_review import extract_items
 from tender_assistant import agent_messages_json, ask_model, build_search, citation, find_candidates, load_config, read_document_inputs, resolve_answer
 from tender_agent import run_agent
 import team_store
+from revision_chain import compare_chain, effective_time
 
 
 WEB = Path(__file__).with_name("web")
@@ -80,6 +81,7 @@ class Question(BaseModel):
     document_id: str = "sample"
     previous_question: str = Field(default="", max_length=500)
     correction_id: str = Field(default="", max_length=32)
+    use_revision_chain: bool = False
 
 
 class ImportLink(BaseModel):
@@ -117,6 +119,16 @@ class Share(BaseModel):
 
 class CorrectionLink(BaseModel):
     correction_id: str = Field(default="", max_length=32)
+
+
+class RevisionEntry(BaseModel):
+    document_id: str = Field(pattern=r"^[0-9a-f]{32}$")
+    effective_at: str
+
+
+class RevisionSet(BaseModel):
+    entries: list[RevisionEntry] = Field(max_length=30)
+    version: str = Field(min_length=64, max_length=64)
 
 
 class GroupTitle(BaseModel):
@@ -160,6 +172,8 @@ async def team_access(request: Request, call_next):
         except ValueError:
             return JSONResponse({"detail": "问答参数无效"}, 422)
         targets.extend(filter(None, (question.document_id, question.correction_id)))
+        if re.fullmatch(r"[0-9a-f]{32}", question.document_id):
+            targets.extend(row['document_id'] for row in team_store.revisions(question.document_id)['entries'])
     if any(not team_store.can_access(user, doc) for doc in targets):
         return JSONResponse({"detail": "未找到可访问的文档"}, 404)
     response = await call_next(request)
@@ -489,9 +503,111 @@ def checklist_deadline(original, packages, package):
     return None
 
 
+def saved_revision_chain(document_id, request=None):
+    if not re.fullmatch(r'[0-9a-f]{32}', document_id):
+        return None
+    entries = team_store.revisions(document_id)['entries']
+    if not entries:
+        return None
+    if TEAM and request is not None and any(not team_store.can_access(request.state.user, e['document_id']) for e in entries):
+        raise HTTPException(403, '需要获得所有关联公告的访问权限，才能核对当前有效条款')
+    _, original = comparison_files(document_id)
+    return compare_chain(checklist_facts(document_id), original, document_id, entries,
+                         lambda key: comparison_files(key)[1])
+
+
+def apply_chain_to_checklist(result, chain, package, confirmed):
+    result['revision_timeline'] = chain['timeline']
+    warnings = []
+    for event in chain['timeline']:
+        if event.get('reason'):
+            warnings.append(event['reason'])
+            if event['status'] == 'needs_review':
+                for item in result['items']:
+                    if item.get('base_item_id', item['id']) in {'price-limit', 'bid-deadline'} or item['id'].startswith('license-'):
+                        item['review_blocked'] = event['reason']
+                        item['applicability'] = 'pending'
+        for change in event['changes']:
+            if change['package'] != package:
+                if change['package'] is None and change.get('reason'):
+                    warnings.append(change['reason'])
+                    for item in result['items']:
+                        base = item.get('base_item_id', item['id'])
+                        if (change['field'] == LIMIT and base == 'price-limit'
+                            or change['field'] == DEADLINE and base == 'bid-deadline'
+                            or change['field'] == QUALIFICATION and base.startswith('license-')):
+                            item['review_blocked'] = change['reason']
+                            item['applicability'] = 'pending'
+                continue
+            field = change['field']
+            base_ids = ({'price-limit' if field == LIMIT else 'bid-deadline'} if field != QUALIFICATION else
+                        {'license-' + ref['id'] for ref in change['original_sources']})
+            matches = [item for item in result['items'] if item.get('base_item_id', item['id']) in base_ids
+                       or field == QUALIFICATION and item.get('change_revision', {}).get('after') == change['before']]
+            if change['status'] != 'changed':
+                warnings.append(change.get('reason', '变更待核对'))
+                for item in matches:
+                    item['review_blocked'] = change.get('reason', '变更待核对')
+                    item['applicability'] = 'pending'
+                continue
+            if not matches and field == QUALIFICATION:
+                add_license_revision(result, change['notice_id'], change, change.get('action') == '新增')
+                matches = [result['items'][-1]]
+            for item in matches:
+                base = item.get('base_item_id', item['id'].split(':')[0])
+                history = item.setdefault('revision_history', [])
+                previous_id = item['id']
+                history.append({**change, 'previous_item_id': previous_id,
+                                'previous_confirmation': confirmed.get(previous_id)})
+                item['id'] = base
+                item['base_item_id'] = base
+                attach_revision(item, change['notice_id'], change, confirmed)
+                history[-1]['item_id'] = item['id']
+    result['revision_warnings'] = list(dict.fromkeys(warnings))
+
+
+@app.get('/api/documents/{document_id}/revisions')
+@app.put('/api/documents/{document_id}/revisions')
+def document_revisions(document_id: str, request: Request, payload: RevisionSet | None = None):
+    ready_folder(document_id)
+    if request.method == 'PUT':
+        if TEAM and not team_store.owns(request.state.user, document_id):
+            raise HTTPException(403, '只有文档所有者或管理员可修改公告时间线')
+        if payload is None:
+            raise HTTPException(422, '缺少公告列表')
+        entries, seen = [], set()
+        for entry in payload.entries:
+            target = entry.document_id
+            if target == document_id or target in seen:
+                raise HTTPException(422, '不能关联自身或重复公告')
+            seen.add(target)
+            if TEAM and not team_store.can_access(request.state.user, target):
+                raise HTTPException(404, '未找到可访问的公告')
+            ready_folder(target)
+            try:
+                entries.append({'document_id': target, 'effective_at': effective_time(entry.effective_at)})
+            except ValueError:
+                raise HTTPException(422, '请输入有效的公告生效时间（包含时区）') from None
+        entries.sort(key=lambda e: (e['effective_at'], e['document_id']))
+        try:
+            team_store.revisions(document_id, entries, payload.version,
+                                 request.state.user['name'] if TEAM else '本地用户')
+        except ValueError as error:
+            raise HTTPException(409, str(error)) from None
+    saved = team_store.revisions(document_id)
+    if TEAM and any(not team_store.can_access(request.state.user, e['document_id']) for e in saved['entries']):
+        raise HTTPException(403, '需要所有关联公告的访问权限')
+    chain = saved_revision_chain(document_id, request)
+    return {**saved, 'timeline': chain['timeline'] if chain else [],
+            'has_conflicts': chain['has_conflicts'] if chain else False,
+            'can_edit': not TEAM or team_store.owns(request.state.user, document_id)}
+
+
 def revision_key(base, correction_id, change):
     # Keep prior price confirmation IDs compatible.
     fingerprint = [correction_id, change["before"], change["after"]]
+    if change.get("chain_revision"):
+        fingerprint.append(change["chain_revision"])
     digest = sha256(json.dumps(fingerprint, ensure_ascii=False).encode("utf-8")).hexdigest()
     return f"{base}:{digest}"
 
@@ -590,6 +706,11 @@ def get_checklist(document_id: str, request: Request, package: int | None = None
     _, original = comparison_files(document_id)
     if deadline := checklist_deadline(original, facts[0], package):
         result["items"].insert(0, deadline)
+    chain = saved_revision_chain(document_id, request)
+    if chain is not None:
+        scope = f"package-{package if package is not None else 'general'}"
+        apply_chain_to_checklist(result, chain, package, review_state(document_id).get(scope, {}))
+        return result
     if TEAM:
         correction_id = team_store.correction(document_id)
         if correction_id and not team_store.can_access(request.state.user, correction_id):
@@ -620,6 +741,17 @@ def review_state(document_id):
     return team_store.confirmations(document_id, legacy) if TEAM else legacy
 
 
+def validate_chain_confirmation(document_id, scope, ids, request):
+    if scope == 'raw' or not re.fullmatch(r'[0-9a-f]{32}', document_id):
+        return
+    if not team_store.revisions(document_id)['entries']:
+        return
+    package = None if scope == 'package-general' else int(scope.split('-')[1])
+    current = {item['id']: item for item in get_checklist(document_id, request, package)['items']}
+    if any(key not in current or current[key].get('review_blocked') for key in ids):
+        raise HTTPException(409, '条款已变更或存在冲突，请刷新并核对最新公告后再确认')
+
+
 @app.get("/api/documents/{document_id}/confirmations")
 def get_confirmations(document_id: str):
     return review_state(document_id)
@@ -629,6 +761,8 @@ def get_confirmations(document_id: str):
 def set_confirmation(document_id: str, payload: Confirmation, request: Request):
     if not SCOPE.fullmatch(payload.scope):
         raise HTTPException(422, "确认范围无效")
+    if payload.confirmed:
+        validate_chain_confirmation(document_id, payload.scope, [payload.item_id], request)
     if TEAM:
         return team_store.confirmations(document_id, legacy_review_state(document_id),
                                         (payload.scope, payload.item_id, request.state.user["name"], payload.confirmed))
@@ -657,6 +791,8 @@ def set_confirmations_batch(document_id: str, payload: ConfirmationBatch, reques
     ids = list(dict.fromkeys(payload.item_ids))[:500]
     if not ids:
         raise HTTPException(422, "没有需要处理的条目")
+    if payload.confirmed:
+        validate_chain_confirmation(document_id, payload.scope, ids, request)
     if TEAM:
         reviewer = request.state.user["name"]
         changes = [(payload.scope, item, reviewer, payload.confirmed) for item in ids]
@@ -932,6 +1068,20 @@ def ask(payload: Question):
         raise HTTPException(422, "请输入问题")
     previous = payload.previous_question.strip()
     comparison = comparison_request(question, previous)
+    if payload.document_id != 'sample':
+        chain = saved_revision_chain(payload.document_id)
+        if chain is not None and (comparison or re.search(r"最高限价|投标截止|许可证|证照", question)):
+            from document_compare import comparison_packages
+            selected = comparison_packages(question + ' ' + previous)
+            wanted = comparison[0] if comparison else [field for field, pattern in
+                [(LIMIT, r'限价'), (DEADLINE, r'截止'), (QUALIFICATION, r'许可证|证照')] if re.search(pattern, question)]
+            chain['changes'] = [row for row in chain['changes'] if row['field'] in wanted
+                                and (not selected or row['package'] in selected or row['package'] is None)]
+            if comparison or chain['changes'] or chain['has_conflicts']:
+                chain['current'] = [row for row in chain['current'] if row['field'] in wanted
+                                    and (not selected or row['package'] in selected or row['package'] is None)]
+                return chain
+
     if comparison and payload.correction_id:
         if payload.document_id == payload.correction_id:
             raise HTTPException(422, "请选择另一份 PDF 作为澄清公告")

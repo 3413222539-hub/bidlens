@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/style.css?v=20261112e">
-  <script src="/assets/workspace.js?v=20261112f" defer></script>
+  <script src="/assets/workspace.js?v=20261113a" defer></script>
 </head>
 <body>
   <header class="top">
@@ -304,6 +304,15 @@
           <select id="correction-document" aria-describedby="correction-help"></select>
           <button id="compare-documents" type="button" disabled>查看变更</button>
           <p id="correction-help" class="muted">选择同一项目已导入的公告 PDF，可比对最高限价、投标截止时间和证照资格要求。</p>
+          <details id="revision-manager">
+            <summary>多份公告时间线</summary>
+            <p class="muted">从上方选择公告，按原文填写生效时间。时间线保存后，问答、自查和导出均采用时间线；单份临时比对不再覆盖它。同一时间的冲突需核对后修正关联。</p>
+            <label for="revision-effective">生效时间（当前电脑时区）</label>
+            <input id="revision-effective" type="datetime-local">
+            <button id="revision-add" type="button">添加所选公告</button>
+            <div id="revision-list"></div>
+            <p id="revision-status" role="status" class="muted"></p>
+          </details>
         </div>
         <details id="team-sharing" class="comparison-controls" hidden>
           <summary>共享文档</summary>

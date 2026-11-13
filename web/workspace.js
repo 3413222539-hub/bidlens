@@ -279,7 +279,7 @@ function renderRisks(report, scoped = false) {
     const applicability = scoped ? node("span", applicabilityLabels[item.applicability], `badge scope-badge ${item.applicability}`) : null;
     const needsEvidence = item.references.some((ref) => !ref.sources.length)
       || item.sources.some((source) => source.page_verified === false);
-    const statusText = () => checked.has(item.id) ? "已确认" : item.change_revision ? "变更后待复核" : item.review_blocked ? "待授权" : needsEvidence ? "待补证" : item.scope ? "核对适用范围" : "待核对";
+    const statusText = () => item.review_blocked ? "暂停确认" : checked.has(item.id) ? "已确认" : item.change_revision ? "变更后待复核" : needsEvidence ? "待补证" : item.scope ? "核对适用范围" : "待核对";
     badge.textContent = statusText();
     summary.append(node("span", item.group, "number"), node("span", item.title, "clause-title"));
     if (applicability) summary.append(applicability);
@@ -299,6 +299,17 @@ function renderRisks(report, scoped = false) {
         const at = previous.at ? new Date(previous.at).toLocaleString() : "时间未记录";
         content.append(node("p", `历史确认：${previous.by} · ${at}`, "muted"));
       }
+    }
+    if (item.revision_history?.length) {
+      const history = node("details");
+      history.append(node("summary", `变更与确认历史（${item.revision_history.length} 次）`));
+      for (const entry of item.revision_history) {
+        const record = entry.previous_confirmation;
+        history.append(node("p", `${new Date(entry.effective_at).toLocaleString()}：${entry.before} → ${entry.after}`),
+          sourceButtons(entry.original_sources, "之前依据 · "), sourceButtons(entry.correction_sources, "本次依据 · "));
+        if (record) history.append(node("p", `变更前确认：${record.by} · ${record.at || "时间未记录"}`, "muted"));
+      }
+      content.append(history);
     }
     if (item.review_blocked) content.append(node("p", item.review_blocked, "muted"));
     if (item.scope) content.append(node("p", item.scope, "muted"));
@@ -604,7 +615,72 @@ byId("chat-starters").addEventListener("click", (event) => {
   byId("question").focus();
 });
 
+let revisionSet = null;
+
+async function loadRevisions() {
+  const doc = currentDocument;
+  revisionSet = null;
+  byId("revision-list").replaceChildren();
+  byId("revision-add").disabled = true;
+  if (!doc || doc === "sample") return;
+  try {
+    const data = await api(`/api/documents/${doc}/revisions`);
+    if (doc !== currentDocument) return;
+    revisionSet = data;
+    byId("revision-add").disabled = !data.can_edit;
+    byId("revision-status").textContent = data.has_conflicts ? "存在待核对公告，相关结论不能自动确认。" : data.entries.length ? "已启用公告时间线。" : "尚未保存时间线，可继续使用单份比对。";
+    for (const entry of data.entries) {
+      const event = data.timeline.find((e) => e.document_id === entry.document_id);
+      const row = document.createElement("section");
+      const label = document.createElement("p");
+      label.textContent = `${documents.get(entry.document_id)?.name || "公告"} · ${new Date(entry.effective_at).toLocaleString()} · ${{scheduled:"尚未生效",needs_review:"待核对",evaluated:"已比对"}[event?.status] || "待解析"}`;
+      row.append(label);
+      if (event?.reason) row.append(node("p", event.reason, "muted"));
+      for (const change of event?.changes || []) {
+        const line = document.createElement("p");
+        line.textContent = `${change.package ? "第" + change.package + "包" : "范围待核对"} ${change.field}：${change.before || "未核实"} → ${change.after || "未核实"}${change.reason ? "；" + change.reason : ""}`;
+        row.append(line, sourceButtons(change.original_sources, "之前依据 · "), sourceButtons(change.correction_sources, "本次公告 · "));
+      }
+      if (data.can_edit) row.append(button("移除此关联", () => saveRevisions(data.entries.filter((e) => e.document_id !== entry.document_id))));
+      byId("revision-list").append(row);
+    }
+  } catch (error) {
+    if (doc === currentDocument) byId("revision-status").textContent = error.message;
+  }
+}
+
+async function saveRevisions(entries) {
+  const doc = currentDocument;
+  if (!revisionSet) return;
+  byId("revision-add").disabled = true;
+  try {
+    await api(`/api/documents/${doc}/revisions`, jsonOptions("PUT", {entries, version: revisionSet.version}));
+    if (doc !== currentDocument) return;
+    await loadRevisions();
+    refreshChecklistAfterCorrection();
+  } catch (error) {
+    if (doc === currentDocument) {
+      await loadRevisions();
+      byId("revision-status").textContent = error.message;
+    }
+  }
+}
+
+byId("revision-add").addEventListener("click", () => {
+  const target = byId("correction-document").value;
+  const raw = byId("revision-effective").value;
+  if (!target || !raw || !revisionSet) {
+    byId("revision-status").textContent = "请选择公告并填写原文明确的生效时间。";
+    return;
+  }
+  const effective = new Date(raw);
+  if (!Number.isFinite(effective.getTime())) return;
+  saveRevisions([...revisionSet.entries.filter((e) => e.document_id !== target),
+    {document_id: target, effective_at: effective.toISOString()}]);
+});
+
 function updateCorrectionOptions() {
+  loadRevisions();
   const select = byId("correction-document");
   const saved = localStorage.getItem(`tender-correction-${currentDocument}`);
   select.replaceChildren(new Option("选择已导入的 PDF", ""));
@@ -869,6 +945,18 @@ function renderAgentMessage(result, input, question, previous) {
   const bubble = node("div", "", "chat-bubble agent-bubble");
 
   if (result.status === "comparison") {
+    if (result.timeline) {
+      bubble.append(node("p", `按公告生效时间核对 · 截至 ${new Date(result.as_of).toLocaleString()}`));
+      if (result.has_conflicts) bubble.append(node("p", "公告存在冲突或未识别内容，当前值仍需人工核对，相关清单项暂停确认。", "muted"));
+      for (const event of result.timeline) {
+        if (event.status === "scheduled") bubble.append(node("p", `有一份公告将在 ${new Date(event.effective_at).toLocaleString()} 生效，暂未应用。`, "muted"));
+        if (event.reason) bubble.append(node("p", event.reason, "muted"));
+      }
+      if (!result.has_conflicts && result.current?.length) {
+        bubble.append(node("strong", "目前已生效的变更"));
+        for (const value of result.current) bubble.append(node("p", `${value.package === null ? "项目通用" : `第 ${value.package} 包`} · ${value.field}：${value.after}`));
+      }
+    }
     renderComparison(bubble, result.changes);
     row.append(agentAvatar(), bubble);
     return row;
@@ -972,6 +1060,7 @@ function renderComparison(answer, changes) {
     const card = node("section", "", "comparison-result");
     const scope = change.package === null ? "" : `第 ${change.package} 包 · `;
     card.append(node("strong", scope + change.field + (change.action ? ` · ${change.action}` : "")));
+    if (change.effective_at) card.append(node("p", `生效时间：${new Date(change.effective_at).toLocaleString()}`, "muted"));
     if (change.action) {
       card.append(node("p", `变更前：${change.before || "未定位到对应旧条款"}`),
         node("p", `变更后：${change.after || "新条款待核实"}`));
@@ -979,7 +1068,7 @@ function renderComparison(answer, changes) {
       card.append(node("p", `${change.before || "原值待核实"} → ${change.after || "新值待核实"}`));
     }
     if (change.reason) card.append(node("p", `待核对 · ${change.reason}`, "muted"));
-    if (change.original_sources.length) card.append(sourceButtons(change.original_sources, "原招标文件 · "));
+    if (change.original_sources.length) card.append(sourceButtons(change.original_sources, "变更前依据 · "));
     if (change.correction_sources.length) card.append(sourceButtons(change.correction_sources, "澄清公告 · "));
     answer.append(card);
   }
@@ -1023,7 +1112,7 @@ byId("ask-form").addEventListener("submit", async (event) => {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({question, document_id: currentDocument, previous_question: previous,
-        correction_id: byId("correction-document").value}),
+        correction_id: byId("correction-document").value, use_revision_chain: Boolean(revisionSet?.entries.length)}),
     });
     if (version !== documentVersion) return;
     thinking.remove();
