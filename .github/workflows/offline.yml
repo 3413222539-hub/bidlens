@@ -3,6 +3,12 @@ name: Offline verification
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      live_import:
+        description: Run a real PDF import using repository secrets
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -29,5 +35,30 @@ jobs:
       - run: docker compose run --rm app python scripts/seed_revision_demo.py
       - run: docker compose up -d --wait
       - run: curl --fail --silent --show-error http://127.0.0.1:8780/api/session
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements.txt
+      - name: Verify container demo and import
+        env:
+          LIVE_IMPORT: ${{ inputs.live_import }}
+          MINERU_API_TOKEN: ${{ inputs.live_import && secrets.MINERU_API_TOKEN || '' }}
+          DASHSCOPE_API_KEY: ${{ inputs.live_import && secrets.DASHSCOPE_API_KEY || '' }}
+          DASHSCOPE_BASE_URL: ${{ vars.DASHSCOPE_BASE_URL }}
+          DASHSCOPE_MODEL: ${{ vars.DASHSCOPE_MODEL }}
+        run: |
+          args=()
+          if [[ "$LIVE_IMPORT" == "true" ]]; then
+            : "${MINERU_API_TOKEN:?Missing MINERU_API_TOKEN repository secret}"
+            : "${DASHSCOPE_API_KEY:?Missing DASHSCOPE_API_KEY repository secret}"
+            : "${DASHSCOPE_BASE_URL:?Missing DASHSCOPE_BASE_URL repository variable}"
+            : "${DASHSCOPE_MODEL:?Missing DASHSCOPE_MODEL repository variable}"
+            pdf="$RUNNER_TEMP/bidlens-holdout.pdf"
+            curl --fail --silent --show-error --location --max-time 60 'https://old.yctu.edu.cn/_upload/article/files/48/8d/a473d57a46b1ab828e6a7da0bd29/95d30625-7d33-4e5d-bdd9-d6d8c3de1720.pdf' -o "$pdf"
+            echo "610b01c3df1e4d9800ad4025b62b37d1c2ba2fc55aa4d9a4bfdf74bd3a2f5fec  $pdf" | sha256sum --check
+            docker compose up -d --wait --force-recreate
+            args=(--live-pdf "$pdf")
+          fi
+          python scripts/smoke_clean.py --base-url http://127.0.0.1:8780 --output "$RUNNER_TEMP/bidlens-smoke.json" "${args[@]}"
       - if: always()
         run: docker compose down

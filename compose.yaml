@@ -8,9 +8,13 @@ services:
       - path: .env
         required: false
     environment:
+      - MINERU_API_TOKEN
+      - DASHSCOPE_API_KEY
+      - DASHSCOPE_BASE_URL
+      - DASHSCOPE_MODEL
       # 需要登录时取消注释
       # TENDER_TEAM: "1"
-      TZ: Asia/Shanghai
+      - TZ=Asia/Shanghai
     volumes:
       # 招标文件与解析结果
       - ./data:/app/data

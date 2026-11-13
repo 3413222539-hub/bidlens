@@ -18,17 +18,19 @@ from uuid import uuid4
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--live-pdf', type=Path)
+    parser.add_argument('--base-url', help='Check an already running, seeded instance')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     root = Path.cwd()
-    subprocess.run([sys.executable, 'scripts/seed_revision_demo.py'], check=True)
+    if not args.base_url:
+        subprocess.run([sys.executable, 'scripts/seed_revision_demo.py'], check=True)
     sys.path.insert(0, str(root))
     from scripts.seed_revision_demo import ORIGINAL_ID, NOTICE_ID
     sock = socket.socket()
     sock.bind(('127.0.0.1', 0))
     port = sock.getsockname()[1]
     sock.close()
-    base = f'http://127.0.0.1:{port}'
+    base = args.base_url.rstrip('/') if args.base_url else f'http://127.0.0.1:{port}'
     env = {**os.environ, 'TENDER_TEAM':'0'}
     report = {'checks':{}, 'import':'not_run'}
     log_path = args.output.with_suffix('.server.log')
@@ -39,13 +41,15 @@ def main():
         with urlopen(req, timeout=20) as r:
             return json.load(r) if 'json' in r.headers.get('Content-Type','') else r.read()
     with log_path.open('w',encoding='utf-8') as log:
-        server = subprocess.Popen([sys.executable,'-m','uvicorn','web_app:app','--host','127.0.0.1','--port',str(port)], env=env, stdout=log, stderr=log)
+        server = None if args.base_url else subprocess.Popen(
+            [sys.executable, '-m', 'uvicorn', 'web_app:app', '--host', '127.0.0.1', '--port', str(port)],
+            env=env, stdout=log, stderr=log)
         try:
             for _ in range(60):
                 try:
                     request('/api/session'); break
                 except OSError:
-                    if server.poll() is not None: raise RuntimeError('Server exited')
+                    if server and server.poll() is not None: raise RuntimeError('Server exited')
                     time.sleep(.5)
             else: raise TimeoutError('Startup')
             report['checks']['startup'] = True
@@ -74,8 +78,9 @@ def main():
                 report['checks']['real_import'] = job['state']=='ready' and job.get('risk_state')=='ready'
             report['passed']=all(report['checks'].values())
         finally:
-            server.terminate()
-            server.wait(timeout=20)
+            if server:
+                server.terminate()
+                server.wait(timeout=20)
             args.output.write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(report,ensure_ascii=True))
     return 0 if report.get('passed') else 1
