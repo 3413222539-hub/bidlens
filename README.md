@@ -117,11 +117,12 @@ python -m uvicorn web_app:app --port 8780
 ```bash
 git clone https://github.com/3413222539-hub/bidlens.git
 cd bidlens
-cp .env.example .env      # 填入下面三个 Key
-docker compose up --build
+docker compose build
+docker compose run --rm app python scripts/seed_revision_demo.py
+docker compose up -d --wait
 ```
 
-打开 http://127.0.0.1:8780
+打开 http://127.0.0.1:8780，点击「体验无 Key 演示」。导入真实文件时，将 `.env.example` 复制为 `.env`，填写服务配置，再执行 `docker compose up -d --force-recreate --wait`。
 
 ### 方式二：本地运行
 

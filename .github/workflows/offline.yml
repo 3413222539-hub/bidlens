@@ -21,3 +21,13 @@ jobs:
       - run: node --check web/workspace.js
       - run: python -m pytest -q tests/test_config.py tests/test_revision_chain.py tests/test_revision_api.py
       - run: python scripts/smoke_clean.py --output data/clean-smoke.json
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker compose build
+      - run: docker compose run --rm app python scripts/seed_revision_demo.py
+      - run: docker compose up -d --wait
+      - run: curl --fail --silent --show-error http://127.0.0.1:8780/api/session
+      - if: always()
+        run: docker compose down
