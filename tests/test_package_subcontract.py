@@ -1,6 +1,11 @@
 import pytest
 
-from package_subcontract import answer_subcontract, subcontract_question
+from package_subcontract import answer_subcontract, standalone_subcontract_question, subcontract_question
+
+
+def test_subcontract_rule_does_not_take_over_compound_question():
+    assert not standalone_subcontract_question("合同履行多久？允许分包吗？投标有效期从哪天起算？")
+    assert standalone_subcontract_question("采购包1允许合同分包吗？")
 
 
 def row(text, page=7):

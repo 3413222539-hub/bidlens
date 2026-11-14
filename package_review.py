@@ -296,6 +296,59 @@ def answer_package_fact(question, facts):
             "sources": card["sources"]}
 
 
+def package_limit_conflict(question, units, pages, facts):
+    """Compare an explicitly scoped package summary with its quotation cover table."""
+    query = standard(question).rstrip("？?。").strip()
+    selected = PACKAGE.search(query)
+    if selected:
+        query = query[:selected.start()] + query[selected.end():]
+    if not re.fullmatch(r"\s*(?:请问|本项目|该项目)?\s*最高限价(?:是多少|多少|是什么)?\s*", query):
+        return None
+    packages = facts[0]
+    package = package_number(selected) if selected else next(iter(packages)) if len(packages) == 1 else None
+    if package is None or package not in packages:
+        return None
+    limits = list(facts[2])
+    summary = re.compile(rf"采购包\s*{package}\s*:\s*(?:采购包预算金额\(元\)\s*:\s*{VALUE}\s*)?"
+                         rf"采购包最高限价\(元\)\s*:\s*({VALUE})(?![\d.,])")
+    table_rows = {}
+    for unit in units:
+        if unit.get("row") is not None:
+            table_rows.setdefault(unit["evidence_id"], []).append(unit)
+    for page, raw in enumerate(pages, 1):
+        native = standard(raw)
+        if match := summary.search(native):
+            amount = match[1] + "元"
+            limits.append(([{"id": f"P{page}-package-limit-{package}", "page": page,
+                             "text": match[0], "origin": "pdf_text", "page_verified": True}],
+                           {package: amount}))
+        head = re.search(r"开标\s*(?:\(报价\))?\s*一览表", native)
+        if not head:
+            continue
+        cover = re.split(r"投标\s*(?:\(响应\))?\s*报价明细表", native[head.end():], maxsplit=1)[0]
+        if re.findall(r"采购包\s*:\s*(\d+)\s*\(", cover) != [str(package)]:
+            continue
+        for table in table_rows.values():
+            if len(table) != 2 or any(row["page"] != page for row in table):
+                continue
+            header, row = table
+            if standard(header["text"]).split(" | ") != ["序号", "报价内容", "最高限价", "响应报价", "价款形式"]:
+                continue
+            cells = standard(row["text"]).split(" | ")
+            if len(cells) != 5 or cells[-1] != "总价" or not re.fullmatch(rf"{VALUE}\s*(?:万元|元)", cells[2]):
+                continue
+            if normalize(cells[2]) not in normalize(cover):
+                continue
+            limits.append(([source_from(header), source_from(row)], {package: cells[2].replace(" ", "")}))
+    distinct = {
+        yuan(value) for _, values in limits
+        if (value := values.get(package) or (values.get(None) if len(packages) == 1 else None))
+    }
+    if len(distinct) <= 1:
+        return None
+    return answer_package_fact(question, (packages, facts[1], limits, facts[3], facts[4]))
+
+
 def package_checklist(report, facts, selected):
     packages, deposits, limits, licenses, methods = facts
     cards = []

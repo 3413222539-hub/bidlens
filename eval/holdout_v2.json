@@ -1,0 +1,803 @@
+{
+  "version": "holdout-v2",
+  "frozen_on": "2026-11-13",
+  "scoring": "semantic rubric; regex metrics disabled",
+  "documents": [
+    {
+      "id": "d01",
+      "url": "https://zcglc.fjut.edu.cn/_upload/article/files/4b/da/0a9774664ed4b4ac9c7e735ae051/614310e1-defd-4ff1-a403-caec0dd1b687.pdf",
+      "pages": 276,
+      "sha256": "4f85b6eef42bf8cb9b34db7e1b18e50a2dc4870ebd9adfe46f9561bff4896437"
+    },
+    {
+      "id": "d02",
+      "url": "https://www.qztc.edu.cn/_upload/article/files/ca/b5/226e07e94cec95a7eefdf1f75977/842891e6-919e-4359-8477-11455593f44c.pdf",
+      "pages": 112,
+      "sha256": "10c00ccb61dec6c96c224536e9b7992f0f20e7212fdc7d24284586b701ade187"
+    },
+    {
+      "id": "d04",
+      "url": "https://guangxi.chinatax.gov.cn/fangchenggang/tzgg_15261/tzgg_15262/202605/P020260509638626190318.pdf",
+      "pages": 100,
+      "sha256": "847aaf8dd86f24c179cf1eba1c98d66980e6a3e67b31928dd0a8fc58d881d8a9"
+    },
+    {
+      "id": "d06",
+      "url": "https://guangxi.chinatax.gov.cn/nanning/xxgk/zfcg/zbgg1/202406/P020240612627806564012.pdf",
+      "pages": 104,
+      "sha256": "25d6194726447de6a0b35051cca2acdc0f50ed32092a848fbda25ba1ce1ae486"
+    },
+    {
+      "id": "d07",
+      "url": "https://jiangsu.chinatax.gov.cn/module/download/downfile.jsp?classid=0&filename=f0c990dc5a0241c688fbd564f28ae3e1.pdf",
+      "pages": 86,
+      "sha256": "6050e3a688bffebdbc927d654628590e73f26a1eecf1cc44f75d5e571a5bbe66"
+    },
+    {
+      "id": "d13",
+      "url": "https://jiangsu.chinatax.gov.cn/module/download/downfile.jsp?classid=0&filename=b95b6e091bbb41d9ae276b994597b237.pdf&showname=3.%E5%9B%BD%E5%AE%B6%E7%A8%8E%E5%8A%A1%E6%80%BB%E5%B1%80%E6%B3%B0%E5%85%B4%E5%B8%82%E7%A8%8E%E5%8A%A1%E5%B1%802026-2029%E5%B9%B4%E5%BA%A6%E9%91%AB%E6%B3%B0%E5%A4%A7%E5%8E%A6%E7%89%A9%E4%B8%9A%E7%AE%A1%E7%90%86%E6%9C%8D%E5%8A%A1%E9%87%87%E8%B4%AD%E9%A1%B9%E7%9B%AE%E6%8B%9B%E6%A0%87%E6%96%87%E4%BB%B6%EF%BC%88%E5%95%86%E5%8A%A1%E9%83%A8%E5%88%86%EF%BC%89.pdf",
+      "pages": 68,
+      "sha256": "d756bb95795ed3fd9743ed7e6321d32501dfd9c9d34db01434b419cc53e5598d"
+    },
+    {
+      "id": "d19",
+      "url": "https://zcglc.fjut.edu.cn/_upload/article/files/78/29/88c637ed4707a91f921c4cd1d737/02e62441-d48c-4777-9b6d-8092749c78fe.pdf",
+      "pages": 70,
+      "sha256": "3d54a7549c2cdff6c0a0e164591c0cc10ad6fead8bc0d72d212e1cbc8f25c78f"
+    },
+    {
+      "id": "d10",
+      "url": "https://jiangsu.chinatax.gov.cn/module/download/downfile.jsp?classid=0&filename=ab8bae431a9b42cf882c8b42308d52e4.pdf",
+      "pages": 64,
+      "sha256": "a9256f2376270ec1a1e0c5cebe1b2f97cfb733bcbe81f3a70907cbe7c6e1164d"
+    },
+    {
+      "id": "d29",
+      "url": "https://guangxi.chinatax.gov.cn/laibin/tzgg_15610/xjtzgg_15612/202505/P020250514393479131402.pdf",
+      "pages": 94,
+      "sha256": "cf1f41373d3bdfcb8b9d86fca93333735abeddf2aa6be741f8cd7165ac8d5c90"
+    },
+    {
+      "id": "d31",
+      "url": "https://guangxi.chinatax.gov.cn/xxgk/zfxxgk_22500/fdzdgknr/zfcg_22570/zbgg_22622/202301/P020230130345023604777.pdf",
+      "pages": 129,
+      "sha256": "9c25e457e4b6a97235cd7780b5ab2b1780278cca114da534e3c2b737c3d6a645"
+    }
+  ],
+  "cases": [
+    {
+      "id": "d01-01",
+      "document": "d01",
+      "kind": "simple",
+      "question": "采购包1最高限价是多少？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "11100000元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d01-02",
+      "document": "d01",
+      "kind": "simple",
+      "question": "投标有效期从何时起算、持续多久？",
+      "pages": [
+        22
+      ],
+      "atoms": [
+        {
+          "fact": "投标截止时间起90个日历日",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d01-03",
+      "document": "d01",
+      "kind": "multi",
+      "question": "采购包1接受联合体吗？最高限价与投标保证金分别是多少？",
+      "pages": [
+        3,
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "不接受联合体",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "最高限价11100000元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "保证金111980元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d01-04",
+      "document": "d01",
+      "kind": "insufficient",
+      "question": "只凭这份预公告版，能确定最终投标截止的具体日期和时刻吗？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不能确定具体日期和时刻，以招标公告或更正公告为准",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d02-05",
+      "document": "d02",
+      "kind": "simple",
+      "question": "采购包1的预算是多少？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "2455500元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d02-06",
+      "document": "d02",
+      "kind": "simple",
+      "question": "采购包1允许合同分包吗？",
+      "pages": [
+        6
+      ],
+      "atoms": [
+        {
+          "fact": "不允许合同分包",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d02-07",
+      "document": "d02",
+      "kind": "multi",
+      "question": "采购包1是否接受联合体？投标文件还需要提供几份光盘或U盘？",
+      "pages": [
+        2,
+        6
+      ],
+      "atoms": [
+        {
+          "fact": "不接受联合体",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "可读介质1份，另存上传的电子投标文件",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d02-08",
+      "document": "d02",
+      "kind": "insufficient",
+      "question": "能否从文件确定最终有多少家供应商实际提交投标？",
+      "pages": [
+        6
+      ],
+      "atoms": [
+        {
+          "fact": "不能；3名是拟确定的中标候选人数量，不是实际投标人数",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d04-09",
+      "document": "d04",
+      "kind": "simple",
+      "question": "项目每年的最高限价是多少？",
+      "pages": [
+        3,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "每年120万元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d04-10",
+      "document": "d04",
+      "kind": "simple",
+      "question": "项目是否接受联合体投标？",
+      "pages": [
+        4,
+        8
+      ],
+      "atoms": [
+        {
+          "fact": "不接受",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d04-11",
+      "document": "d04",
+      "kind": "multi",
+      "question": "投标保证金是多少？投标文件是纸质还是网上提交，最晚何时交？",
+      "pages": [
+        11,
+        12
+      ],
+      "atoms": [
+        {
+          "fact": "24000元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "纸质提交",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "2026年5月6日9时30分北京时间",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d04-12",
+      "document": "d04",
+      "kind": "insufficient",
+      "question": "只凭商务部分能否确定技术部分要求的保洁人员总数？",
+      "pages": [
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "不能；采购需求指向技术部分，需要查技术文件",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d06-13",
+      "document": "d06",
+      "kind": "simple",
+      "question": "机关职工体检服务合同履行期限是多久？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "2年",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d06-14",
+      "document": "d06",
+      "kind": "simple",
+      "question": "投标保证金金额是多少？",
+      "pages": [
+        12
+      ],
+      "atoms": [
+        {
+          "fact": "40000元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d06-15",
+      "document": "d06",
+      "kind": "multi",
+      "question": "若用银行转账交保证金，金额和到账期限是什么？纸质投标何时截止？",
+      "pages": [
+        11,
+        12
+      ],
+      "atoms": [
+        {
+          "fact": "40000元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "投标截止前到账",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "2024年6月7日9时30分北京时间",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "纸质递交",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d06-16",
+      "document": "d06",
+      "kind": "insufficient",
+      "question": "能否据本文件确认某家具体体检机构的两项许可证在投标日仍有效？",
+      "pages": [
+        11
+      ],
+      "atoms": [
+        {
+          "fact": "不能；文件列资格要求，要核查机构实际证照与有效期",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d07-17",
+      "document": "d07",
+      "kind": "simple",
+      "question": "投标有效期从何时起算、持续多久？",
+      "pages": [
+        10
+      ],
+      "atoms": [
+        {
+          "fact": "自提交投标文件截止起60日历日",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d07-18",
+      "document": "d07",
+      "kind": "simple",
+      "question": "项目接受联合体投标吗？",
+      "pages": [
+        4,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "不接受",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d07-19",
+      "document": "d07",
+      "kind": "multi",
+      "question": "两个采购包预算各是多少？各包采用什么限价口径？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "包1预算56万元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "包2预算174万元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "均按基准价报浮动率",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "两包浮动率均不得超过50%，不能把预算当作浮动率",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d07-20",
+      "document": "d07",
+      "kind": "insufficient",
+      "question": "能否只凭两包预算和浮动率上限，算出任意一种水果的最高含税单价？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不能；缺该品种对应基准价，包预算不是商品单价",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d10-21",
+      "document": "d10",
+      "kind": "simple",
+      "question": "本项目收取投标保证金吗？",
+      "pages": [
+        7,
+        11
+      ],
+      "atoms": [
+        {
+          "fact": "不收取",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d10-22",
+      "document": "d10",
+      "kind": "multi",
+      "question": "报价不能超过多少？电子投标文件交几份？",
+      "pages": [
+        3,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "最高限价157万元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "加密电子投标文件1份",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d10-23",
+      "document": "d10",
+      "kind": "multi",
+      "question": "合同履行多久？允许分包吗？投标有效期从哪天起算？",
+      "pages": [
+        3,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "合同履行1年",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "不允许分包",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "从提交投标文件截止日起算60日",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d10-24",
+      "document": "d10",
+      "kind": "insufficient",
+      "question": "只凭招标文件能确定实际中标金额是157万元吗？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不能；157万元是预算与最高限价，实际中标金额要查结果",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d13-25",
+      "document": "d13",
+      "kind": "simple",
+      "question": "项目最高限价多少？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "294万元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d13-26",
+      "document": "d13",
+      "kind": "multi",
+      "question": "合同何时起算、多久？投标保证金需要交吗？",
+      "pages": [
+        3,
+        9
+      ],
+      "atoms": [
+        {
+          "fact": "自合同签订日起三年",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "不要求提供投标保证金",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d13-27",
+      "document": "d13",
+      "kind": "multi",
+      "question": "项目是否接受联合体？递交方式和截止时间是什么？",
+      "pages": [
+        3,
+        9
+      ],
+      "atoms": [
+        {
+          "fact": "不接受联合体",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "纸质提交",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "2026年6月4日上午9点北京时间",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d13-28",
+      "document": "d13",
+      "kind": "insufficient",
+      "question": "能否从文件确定合同实际签订日及准确结束日期？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不能；只给出自签订日起三年，缺实际签约日期",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d19-29",
+      "document": "d19",
+      "kind": "simple",
+      "question": "招标标的一览表中合同包1的投标保证金多少？",
+      "pages": [
+        4
+      ],
+      "atoms": [
+        {
+          "fact": "10万元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d19-30",
+      "document": "d19",
+      "kind": "multi",
+      "question": "合同包1的委托经营期如何计算？投标有效期和经营期一样吗？",
+      "pages": [
+        4,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "经营期5年，自签约至2030年学校规定放暑假之日",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "投标有效期自投标截止后90日历日",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "两者不同",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d19-31",
+      "document": "d19",
+      "kind": "multi",
+      "question": "合同包1保证金多少？能否用现金缴纳，什么时候到账？",
+      "pages": [
+        4,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "10万元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "禁止现金",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "投标截止前到账",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d19-32",
+      "document": "d19",
+      "kind": "insufficient",
+      "question": "这份预公告稿能确定投标截止的具体月、日、时、分吗？",
+      "pages": [
+        3,
+        7
+      ],
+      "atoms": [
+        {
+          "fact": "不能；具体月日时分留空，需要正式公告",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d29-33",
+      "document": "d29",
+      "kind": "simple",
+      "question": "项目每年最高限价是多少？",
+      "pages": [
+        3,
+        6
+      ],
+      "atoms": [
+        {
+          "fact": "每年1259300元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d29-34",
+      "document": "d29",
+      "kind": "multi",
+      "question": "投标文件以什么方式交、何时截止？保证金金额多少？",
+      "pages": [
+        4,
+        10
+      ],
+      "atoms": [
+        {
+          "fact": "纸质密封送达",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "2025年5月12日9时30分北京时间",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "20000元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d29-35",
+      "document": "d29",
+      "kind": "multi",
+      "question": "项目期限和预算总额是多少？能否联合体投标？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "2年",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "2518600元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "不接受联合体",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d29-36",
+      "document": "d29",
+      "kind": "insufficient",
+      "question": "能否从采购预算推断最终中标供应商及其报价？",
+      "pages": [
+        3
+      ],
+      "atoms": [
+        {
+          "fact": "不能；招标文件给预算或限价，需查中标结果",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d31-37",
+      "document": "d31",
+      "kind": "simple",
+      "question": "采购预算金额是多少？",
+      "pages": [
+        4,
+        6
+      ],
+      "atoms": [
+        {
+          "fact": "51.41万元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d31-38",
+      "document": "d31",
+      "kind": "multi",
+      "question": "前附表的最高限价怎么算？投标保证金需要交多少？",
+      "pages": [
+        4,
+        6,
+        8
+      ],
+      "atoms": [
+        {
+          "fact": "最高限价等于采购预算51.41万元",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "投标保证金10000元",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d31-39",
+      "document": "d31",
+      "kind": "multi",
+      "question": "投标截止时间和有效期各是什么？保证金可以现金提交吗？",
+      "pages": [
+        5,
+        8
+      ],
+      "atoms": [
+        {
+          "fact": "2020年5月27日9时30分北京时间",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "自投标截止起90日历日",
+          "pattern": "(?!)"
+        },
+        {
+          "fact": "不可以现金，要求非现金",
+          "pattern": "(?!)"
+        }
+      ]
+    },
+    {
+      "id": "d31-40",
+      "document": "d31",
+      "kind": "insufficient",
+      "question": "仅凭这份文件，能否确认某投标人的保证金已经到账？",
+      "pages": [
+        8
+      ],
+      "atoms": [
+        {
+          "fact": "不能；应查到账信息表或实际缴纳凭证",
+          "pattern": "(?!)"
+        }
+      ]
+    }
+  ],
+  "frozen_sha256": "318c8cea41db8fce6f1edf333e8066382646ca0eba1859321fd0d26817353d98"
+}

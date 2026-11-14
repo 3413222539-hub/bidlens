@@ -10,8 +10,51 @@ from risk_review import collect_candidates
 from tender_agent import DocumentAgent, compact_tool_result, run_agent
 
 
+def test_targeted_initial_searches_cover_copy_count_and_candidate_count():
+    from tender_agent import initial_searches
+    import re
+
+    copies = initial_searches("报价不能超过多少？电子投标文件交几份？")
+    assert any(re.search(pattern, "投标文件份数 | 提交加密电子投标文件1份") for _, pattern in copies)
+    assert any(re.search(pattern, "最高限价157万元") for _, pattern in copies)
+    candidates = initial_searches("能否从文件确定最终有多少家供应商实际提交投标？")
+    assert any(re.search(pattern, "确定中标候选人名单：采购包1：3名") for _, pattern in candidates)
+
+
 def block(ref, page, text):
     return {"evidence_id": ref, "page": page, "text": text, "row": None}
+
+
+def test_package_limit_conflict_compares_cover_only_with_matching_package():
+    from package_review import package_limit_conflict
+
+    pages = [
+        "采购包1：\n采购包预算金额（元）：300\n采购包最高限价（元）：200",
+        "开标（报价）一览表\n采购包：1（服务）\n最高限价\n180元",
+    ]
+    rows = [
+        dict(block("E9", 2, "序号 | 报价内容 | 最高限价 | 响应报价 | 价款形式"), row=1),
+        dict(block("E9", 2, "1 | 服务 | 180元 | 空 | 总价"), row=2),
+    ]
+    facts = ({1, 2}, [], [], [], [])
+    result = package_limit_conflict("采购包1最高限价多少？", rows, pages, facts)
+    assert result["status"] == "needs_review"
+    assert {source["page"] for source in result["related_sources"]} == {1, 2}
+    assert "200元" in result["reason"] and "180元" in result["reason"]
+    assert "300元" not in result["reason"]
+    assert package_limit_conflict("采购包2最高限价多少？", rows, pages, facts) is None
+
+
+def test_package_fact_amount_and_source_are_citable():
+    source = {"id": "E7-R2", "page": 12, "text": "投标保证金的金额为40000元。"}
+    facts = (set(), [{"source": source, "values": {}, "amount": "40000元",
+                     "waiver": False, "text": source["text"]}], [], [], [])
+    agent = DocumentAgent(None, facts=facts)
+    deposit = agent.tool_package_facts()["facts"]["deposits"][0]
+    assert deposit["amount"] == "40000元"
+    assert deposit["evidence"] == [source]
+    result = agent.resolve({"answer": "投标保证金为40000元", "evidence_ids": ["E7-R2"]})
+    assert result["sources"][0]["page"] == 12
 
 
 def test_bid_deposit_waiver_is_distinct_from_performance_deposit(monkeypatch):

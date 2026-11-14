@@ -29,8 +29,8 @@ from document_compare import (
 )
 from document_import import IMPORTS, MAX_BYTES, copy_pdf, create_job, pdf_name, read_job, run_import, save_job, url_name
 from package_scoring import package_score_answer, scoring_scope
-from package_subcontract import answer_subcontract, subcontract_question
-from package_review import answer_package_fact, checklist_card, package_checklist, read_package_facts
+from package_subcontract import answer_subcontract, standalone_subcontract_question, subcontract_question
+from package_review import answer_package_fact, checklist_card, package_checklist, package_limit_conflict, read_package_facts
 from retrieve_evidence import DATA, DOCUMENT, units_from
 from risk_review import extract_items
 from tender_assistant import agent_messages_json, ask_model, build_search, citation, find_candidates, load_config, read_document_inputs, resolve_answer
@@ -1064,6 +1064,10 @@ def scoped_followup(question, previous):
 
 @app.post("/api/ask")
 def ask(payload: Question):
+    return ask_with_options(payload, split=True)
+
+
+def ask_with_options(payload: Question, *, fast=False, split=False):
     question = payload.question.strip()
     if not question:
         raise HTTPException(422, "请输入问题")
@@ -1098,10 +1102,18 @@ def ask(payload: Question):
     if comparison and (QUALIFICATION in comparison[0] or re.search(r"限价|投标截止|澄清公告|更正公告", question)):
         return {"status": "needs_review", "reason": "请先在问答区关联已导入的澄清公告 PDF，再查看两份文件的变更。"}
     if payload.document_id != "sample" and not previous and re.search(r"投标保证金|最高限价", question):
-        answer = answer_package_fact(question, checklist_facts(payload.document_id))
+        facts = checklist_facts(payload.document_id)
+        answer = answer_package_fact(question, facts)
+        if answer and answer["status"] == "needs_review":
+            return answer
+        if "最高限价" in question and not payload.correction_id:
+            _, (units, pages) = comparison_files(payload.document_id)
+            conflict = package_limit_conflict(question, units, pages, facts)
+            if conflict:
+                return {**conflict, "tool_evidence": conflict.get("related_sources", [])}
         if answer:
             return answer
-    if payload.document_id != "sample" and subcontract_question(question):
+    if payload.document_id != "sample" and standalone_subcontract_question(question):
         _, (units, _) = comparison_files(payload.document_id)
         return answer_subcontract(question, units, previous)
     scoring = scoring_scope(question, previous)
@@ -1125,8 +1137,40 @@ def ask(payload: Question):
     try:
         history = [{"question": previous}] if previous else None
         scoped_question, scoring_item = scoped_followup(question, previous)
+        scoped_evidence = []
+        if payload.document_id != "sample" and subcontract_question(question):
+            _, (units, _) = comparison_files(payload.document_id)
+            subcontract = answer_subcontract(question, units, previous)
+            scoped_evidence = subcontract.get("sources", [])
+        if fast and not previous and not payload.correction_id and not scoped_evidence and simple_fact_question(question):
+            candidates = find_candidates(search, question, max_chars=6500, max_blocks=24)
+            if candidates:
+                try:
+                    direct = resolve_answer(ask_model(question, candidates, config), candidates)
+                except (URLError, TimeoutError, ValueError):
+                    direct = {}
+                if direct.get("status") == "answered":
+                    return {**direct, "route": "single_retrieval"}
+        if split and scoped_evidence and not previous and not payload.correction_id:
+            clauses = [part.strip() for part in re.split(r"[？?；;，,]", question) if part.strip()]
+            subcontract_parts = [part for part in clauses if standalone_subcontract_question(part)]
+            remaining = [part for part in clauses if part not in subcontract_parts]
+            if (len(subcontract_parts) == 1 and remaining
+                    and subcontract["answer"].startswith("本项目")
+                    and not re.search(r"采购包|合同包|标包|第.{1,5}包|标段", question)):
+                residual = run_agent(agent, "？".join(remaining) + "？", config, agent_messages_json)
+                if residual["status"] == "answered":
+                    sources = {s["id"]: s for s in subcontract["sources"] + residual["sources"]}
+                    return {**residual, "answer": subcontract["answer"] + "\n" + residual["answer"],
+                            "sources": list(sources.values()), "route": "split_subcontract",
+                            "answer_parts": [
+                                {"question": subcontract_parts[0], "answer": subcontract["answer"],
+                                 "sources": subcontract["sources"]},
+                                {"question": "？".join(remaining) + "？", "answer": residual["answer"],
+                                 "sources": residual["sources"]},
+                            ]}
         result = run_agent(agent, scoped_question, config, agent_messages_json,
-                           history=history, scoring_item=scoring_item)
+                           history=history, scoring_item=scoring_item, scoped_evidence=scoped_evidence)
     except HTTPError as exc:
         if exc.code == 401:
             raise HTTPException(502, "模型认证失败（HTTP 401）。请核对项目 .env 中的 API Key 和接入地址。") from None
@@ -1146,6 +1190,15 @@ def ask(payload: Question):
     if result.get("status") != "answered":
         result.setdefault("tool_evidence", _agent_evidence(agent))
     return result
+
+
+def simple_fact_question(question):
+    text = question.rstrip("？?。").strip()
+    if re.search(r"[？?；;，,]|是否.*(?:多少|多久)|分别|以及|并且|各标包|能否|推断|仅凭|只凭|冲突|不一致", text):
+        return False
+    return bool(re.fullmatch(
+        r".{0,32}(?:最高限价|预算(?:金额)?|投标保证金(?:金额)?|合同履行期限|投标有效期)"
+        r"(?:是|为)?(?:多少(?:钱)?|多久|多长|几天|多少天|什么)", text))
 
 
 def _agent_evidence(agent, limit=3):

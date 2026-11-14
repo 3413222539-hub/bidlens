@@ -2,7 +2,7 @@ import json
 import logging
 import re
 from pathlib import Path
-from time import perf_counter
+from time import perf_counter, sleep
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
@@ -178,8 +178,16 @@ def agent_messages_json(messages, config, max_tokens):
     started = perf_counter()
     logger = logging.getLogger("uvicorn.error")
     try:
-        with urlopen(request, timeout=60) as response:
-            result = json.load(response)
+        for attempt in range(2):
+            try:
+                with urlopen(request, timeout=60) as response:
+                    result = json.load(response)
+                break
+            except (URLError, TimeoutError) as error:
+                if attempt or (isinstance(error, HTTPError) and error.code not in {502, 503, 504}):
+                    raise
+                logger.warning("agent_request retry=%s", getattr(error, "code", type(error).__name__))
+                sleep(0.5)
         content = result["choices"][0]["message"]["content"]
     except Exception as error:
         logger.warning("agent_request failed=%s elapsed_ms=%.0f", type(error).__name__,

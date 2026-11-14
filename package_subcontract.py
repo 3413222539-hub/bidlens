@@ -10,12 +10,17 @@ QUESTION = re.compile(r'非主体|非关键|非核心|辅助性|能否|是否|�
 TOPIC = re.compile(r'(?:非主体|非关键性|非核心|辅助性).{0,32}分包')
 CORE_WORK = re.compile(r'(?<!非)(?:主体|关键性|核心)(?:工作|业务|服务)')
 CHOICE = re.compile(r'[☑✓√]\s*(不允许|允许|禁止|不可以|可以)')
-DIRECT = re.compile(r'^\s*:?\s*(不允许|允许|禁止|不得|不可以|可以)(?:\s*分包|.{0,24}工作分包|[。;；]|$)')
+DIRECT = re.compile(r'^\s*:?\s*(不允许|允许|禁止|不得|不可以|可以)(?:\s*(?:合同)?分包|.{0,24}工作分包|[。;；]|$)')
 GENERAL = re.compile(r'未经.{0,16}同意.{0,35}分包|经.{0,16}同意.{0,24}分包')
+OTHER_TOPIC = re.compile(r'履行期限|合同(?:期限|履行|多久|何时)|服务(?:期|期限)|有效期|截止|保证金|限价|预算|联合体|评分|资格|投标文件(?:份数|递交)')
 
 
 def subcontract_question(question):
     return '分包' in question and bool(QUESTION.search(question)) and not CORE_WORK.search(question)
+
+
+def standalone_subcontract_question(question):
+    return subcontract_question(question) and not OTHER_TOPIC.search(question)
 
 
 def answer_subcontract(question, units, previous_question=''):
@@ -27,12 +32,13 @@ def answer_subcontract(question, units, previous_question=''):
         text = standard(unit['text'])
         if GENERAL.search(text) and unit.get('row') is None and unit.get('type') != 'table':
             general_sources.append(source_from(unit))
-        if not TOPIC.search(text) or (unit.get('type') == 'table' and unit.get('row') is None):
+        project_row = unit.get('row') is not None and '分包要求' in text.split(' | ')[:-1]
+        if not (TOPIC.search(text) or project_row) or (unit.get('type') == 'table' and unit.get('row') is None):
             continue
         markers = list(PACKAGE.finditer(text))
         if not markers and not selected and unit.get('row') is not None:
             option_cell = text.rsplit('|', 1)[-1].strip()
-            if CHOICE.match(option_cell):
+            if CHOICE.match(option_cell) or project_row and CHOICE.search(option_cell):
                 source = source_from(unit)
                 scoped_sources.append(source)
                 for match in CHOICE.finditer(option_cell):

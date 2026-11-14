@@ -972,8 +972,17 @@ function renderAgentMessage(result, input, question, previous) {
 
   if (result.status === "answered") {
     if (result.steps?.length) bubble.append(renderAgentSteps(result.steps, result.partial));
-    bubble.append(result.package_scores ? renderPackageScores(result.package_scores)
-      : node("div", result.answer, "agent-answer"));
+    if (result.answer_parts?.length) {
+      for (const part of result.answer_parts) {
+        const section = node("section", "", "agent-sources");
+        section.append(node("strong", part.question), node("div", part.answer, "agent-answer"),
+          sourceButtons(part.sources));
+        bubble.append(section);
+      }
+    } else {
+      bubble.append(result.package_scores ? renderPackageScores(result.package_scores)
+        : node("div", result.answer, "agent-answer"));
+    }
     if (result.conditions?.length) {
       const block = node("div", "", "agent-conditions");
       block.append(node("span", "适用条件", "agent-label"));
@@ -982,7 +991,7 @@ function renderAgentMessage(result, input, question, previous) {
       block.append(list);
       bubble.append(block);
     }
-    if (!result.package_scores) {
+    if (!result.package_scores && !result.answer_parts?.length) {
       const citations = node("div", "", "agent-sources");
       citations.append(node("span", "原文依据", "agent-label"), sourceButtons(result.sources));
       bubble.append(citations);

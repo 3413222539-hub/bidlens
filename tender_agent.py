@@ -147,6 +147,14 @@ class DocumentAgent:
         if not self.facts:
             return {"found": 0, "note": "这份文件没有抽取到标包事实。"}
         packages, deposits, limits, licenses, methods = self.facts
+        def references(sources):
+            evidence = []
+            for source in sources:
+                ref = source["id"]
+                self.seen[ref] = source
+                evidence.append({"id": ref, "page": source["page"], "text": _clip(source["text"], 700)})
+            return evidence
+
         payload = {
             "packages": sorted(packages),
             "methods": sorted({value for _, value in methods}),
@@ -159,14 +167,17 @@ class DocumentAgent:
                 "page": rule["source"]["page"],
                 "values": {str(k): v[0] for k, v in rule["values"].items() if v[0]},
                 "waived": rule["waiver"],
+                "amount": rule.get("amount"),
                 "text": _clip(rule["text"], 300),
+                "evidence": references([rule["source"]]),
             })
         for sources, values in limits:
             payload["limits"].append({"pages": sorted({s["page"] for s in sources}),
-                                      "values": values})
+                                      "values": values, "evidence": references(sources)})
         for source, scope, names in licenses:
             payload["licenses"].append({"page": source["page"],
-                                        "packages": sorted(scope), "names": names})
+                                        "packages": sorted(scope), "names": names,
+                                        "evidence": references([source])})
         return {"found": 1, "facts": payload}
 
     def tool_checklist(self, keyword=""):
@@ -286,6 +297,17 @@ def compact_tool_result(result, budget=8500):
 
 
 def initial_searches(question):
+    if re.search(r"实际.{0,8}(?:提交投标|投标家数|投标人数量)|(?:多少家|几家).{0,12}(?:投标|供应商)", question):
+        return [("确定中标候选人名单 推荐中标候选人 采购包 名",
+                 r"中标候选人|采购包\s*\d+\s*[:：]\s*\d+\s*(?:名|家)")]
+    if re.search(r"几份|多少份|文件份数|正副本", question):
+        searches = [("投标文件份数 加密电子投标文件 份 正本 副本 光盘 U盘",
+                     r"文件份数|文件的份数|加密电子投标文件|正本|副本|可读介质")]
+        if re.search(r"报价.{0,8}超过|最高限价", question):
+            searches.append(("最高限价 报价不得超过", r"最高限价"))
+        if "联合体" in question:
+            searches.append(("是否接受联合体投标 不接受", r"联合体|采购包\s*\d+\s*[:：]\s*不接受"))
+        return searches
     if re.search(r"资格要求|资格条件", question):
         return [
             ("申请人的资格要求 第二十二条", r"资格要求|资格条件|第二十二条"),
@@ -302,10 +324,18 @@ def initial_searches(question):
     return []
 
 
-def run_agent(agent, question, config, request_json, history=None, max_steps=MAX_STEPS, scoring_item=""):
+def run_agent(agent, question, config, request_json, history=None, max_steps=MAX_STEPS,
+              scoring_item="", scoped_evidence=()):
     """跑 agent 循环，边执行边产出事件（供前端流式展示）。"""
     messages = [{"role": "system", "content": SYSTEM_PROMPT}]
     context = {"question": question, "tools": tool_catalog()}
+    if re.search(r"实际.{0,8}(?:提交投标|投标家数|投标人数量)", question):
+        context["count_instruction"] = "区分实际投标人数与推荐中标候选人数量。若原文只给候选人数，应明确实际人数无法确定，并引用候选人数所在条款。"
+    if scoped_evidence:
+        context["scoped_evidence"] = agent.register_hits(
+            {**source, "evidence_id": source["id"], "row": None}
+            for source in scoped_evidence)["evidence"]
+        context["scope_instruction"] = "分包证据只用于分包子问。请逐项回答整个问题，其余子问须另查证据。"
     if agent.uncovered:
         context["uncovered_pages"] = agent.uncovered[:40]
     if history:
